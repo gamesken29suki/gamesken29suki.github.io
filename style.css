@@ -1,0 +1,30 @@
+/* ページの背景色を変更 */
+body {
+    background-color: #f8f9fa; /* 薄いグレー */
+    /* ここを修正 */
+    font-family: 'Noto Sans JP', sans-serif; /* Google Fontsで指定したフォント名 */
+}
+
+/* 特定の見出しの色を変更 (変更なし) */
+h1 {
+    color: #28a745; /* BootstrapのSuccessカラー（緑） */
+}
+
+/* 自己紹介セクションのタイトルを少し大きく、太くする (変更なし) */
+#about h2 {
+    font-size: 2.5rem; /* 通常より大きく */
+    font-weight: 700; /* 太字 */
+    color: #007bff; /* BootstrapのPrimaryカラー（青） */
+}
+
+/* ここから画像スライダーの高さ調整のCSSを追加 (変更なし) */
+#myCarousel .carousel-item {
+    height: 400px; /* カルーセルの高さを固定 */
+    overflow: hidden; /* 高さを超える部分は非表示に */
+}
+
+#myCarousel .carousel-item img {
+    object-fit: cover; /* 画像が歪まないように、指定した高さに合わせて切り抜き */
+    height: 100%; /* 親要素 (carousel-item) の高さに合わせる */
+    width: 100%; /* 親要素 (carousel-item) の幅に合わせる */
+}
