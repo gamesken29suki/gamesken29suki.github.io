@@ -3,14 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>効果的なUI/UXデザインのコツ - gamesken29sukiのホームページ</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>効果的なUI/UXデザインのコツ - Gamesken29sukiのブログ</title>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdn.consentmanager.net">
+    <link rel="preconnect" href="https://a.delivery.consentmanager.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPCEVG487"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0ZPCEVG487');
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=document.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5B32V58S');</script>
+
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
 </head>
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5B32V58S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html#home">gamesken29suki</a>
@@ -29,7 +55,10 @@
                         <a class="nav-link" href="index.html#services"><i class="fa-solid fa-heart me-1"></i>好きなこと</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html#blog"><i class="fa-solid fa-newspaper me-1"></i>ブログ</a>
+                        <a class="nav-link" href="index.html#portfolio"><i class="fa-solid fa-laptop-code me-1"></i>作品・プロジェクト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="blog-list.html"><i class="fa-solid fa-newspaper me-1"></i>ブログ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#contact"><i class="fa-solid fa-envelope me-1"></i>お問い合わせ</a>
@@ -39,38 +68,59 @@
         </div>
     </nav>
 
-    <div class="container my-5" data-aos="fade-up">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">ホーム</a></li>
-                <li class="breadcrumb-item"><a href="index.html#blog">ブログ</a></li>
-                <li class="breadcrumb-item active" aria-current="page">効果的なUI/UXデザインのコツ</li>
-            </ol>
-        </nav>
+    <main class="container my-5">
+        <article>
+            <h1 class="mb-4">効果的なUI/UXデザインのコツ</h1>
+            <p class="text-muted mb-4">公開日: 2025年7月20日 | カテゴリ: デザイン, UI/UX</p>
 
-        <h1 class="mb-4">効果的なUI/UXデザインのコツ</h1>
-        <p class="text-muted">公開日: 2025年7月20日</p>
-        <img src="https://placehold.jp/300x200.png?text=UI/UX" class="img-fluid rounded mb-4" alt="効果的なUI/UXデザインのコツ" style="width: 100%; height: auto;">
+            <img src="https://placehold.jp/800x450.png?text=UI/UX%20Design" class="img-fluid rounded mb-4" alt="UI/UXデザインの画像">
 
-        <div class="blog-content">
-            <p>ウェブサイトやアプリケーションを成功させるためには、見た目の美しさだけでなく、ユーザーがいかに快適に、迷うことなく利用できるかが重要です。ここでは、効果的なUI（ユーザーインターフェース）とUX（ユーザーエクスペリエンス）デザインの主要なコツをご紹介します。</p>
-            <h3>1. ユーザー中心のアプローチ</h3>
-            <p>デザインプロセス全体を通じて、常にユーザーを最優先に考えましょう。ターゲットユーザーは誰か、彼らのニーズや目標は何か、どのような状況で製品を使用するのかを深く理解することが出発点です。ユーザー調査、ペルソナ作成、ユーザージャーニーマップなどの手法が役立ちます。</p>
-            <h3>2. シンプルさと明瞭さ</h3>
-            <p>「Less is More（少ないほど豊かである）」という原則はUI/UXデザインにおいて特に重要です。不必要な要素を排除し、情報や機能の提示は明確かつ簡潔に行いましょう。ユーザーが次に何をすべきか、どこに何があるか直感的に理解できるデザインが理想です。</p>
-            <h3>3. 一貫性のあるデザイン</h3>
-            <p>色使い、フォント、ボタンのスタイル、アイコン、レイアウトなど、サイト全体で一貫性のあるデザインを保つことが重要です。これにより、ユーザーは学習コストをかけずにサイト内を移動でき、プロフェッショナルな印象を与えます。デザインシステムやスタイルガイドの活用が効果的です。</p>
-            <h3>4. フィードバックとインタラクション</h3>
-            <p>ユーザーが何らかのアクション（ボタンクリック、フォーム入力など）を行った際に、システムからの明確なフィードバックを提供しましょう。ロード中の表示、成功メッセージ、エラーメッセージなどは、ユーザーの不安を軽減し、操作の確実性を高めます。</p>
-            <h3>5. アクセシビリティへの配慮</h3>
-            <p>すべてのユーザーが平等に情報にアクセスできるよう、アクセシビリティに配慮したデザインを心がけましょう。色のコントラスト、キーボード操作、スクリーンリーダーへの対応などは、より幅広いユーザーにサイトを届けるために不可欠です。</p>
-            <p>これらのコツを実践することで、ユーザーにとって魅力的で使いやすいデジタルプロダクトを生み出すことができるでしょう。</p>
-        </div>
+            <p>
+                ウェブサイトやアプリケーションをデザインする際、ユーザーインターフェース（UI）と
+                ユーザーエクスペリエンス（UX）は成功の鍵を握ります。
+                今回は、効果的なUI/UXデザインを実現するためのいくつかのコツをご紹介します。
+            </p>
 
-        <div class="mt-5 text-center">
-            <a href="index.html#blog" class="btn btn-outline-primary">ブログ一覧に戻る</a>
-        </div>
-    </div>
+            <h2 class="mt-5">1. ユーザー中心のアプローチ</h2>
+            <p>
+                デザインプロセスにおいて、常にユーザーを最優先に考えましょう。
+                ターゲットユーザーは誰か、彼らのニーズや目標は何か、どのような状況で製品を使用するのかを深く理解することが重要です。
+                ユーザー調査、ペルソナ作成、ユーザーフローの定義などが役立ちます。
+            </p>
+
+            <h2 class="mt-5">2. シンプルさと一貫性</h2>
+            <p>
+                「Less is more」はデザインの普遍的な原則です。不要な要素を削ぎ落とし、情報を整理することで、
+                ユーザーは迷うことなく目的を達成できます。また、色、フォント、ボタンのスタイル、アイコンなど、
+                デザイン要素に一貫性を持たせることで、視覚的な混乱を防ぎ、信頼性を高めます。
+            </p>
+
+            <h2 class="mt-5">3. フィードバックとインタラクション</h2>
+            <p>
+                ユーザーが何かアクションを起こしたとき（例: ボタンをクリック、フォーム送信）、
+                システムからの明確なフィードバックは不可欠です。
+                視覚的（色の変化、アニメーション）、聴覚的、触覚的なフィードバックを適切に利用し、
+                ユーザーが自分の行動の結果を理解できるようにしましょう。
+            </p>
+
+            <h2 class="mt-5">4. アクセシビリティの考慮</h2>
+            <p>
+                すべてのユーザーが等しく情報にアクセスできるように、アクセシビリティを考慮したデザインを心がけましょう。
+                コントラスト比の高い配色、キーボードナビゲーションのサポート、代替テキストの提供などは、
+                より多くのユーザーに快適な体験を提供するために重要です。
+            </p>
+
+            <p class="mt-5">
+                UI/UXデザインは単なる見た目の美しさだけでなく、ユーザーがいかに効率的かつ快適に目標を達成できるかを追求するものです。
+                これらのコツを実践し、ユーザーフレンドリーなデザインを目指しましょう。
+            </p>
+
+            <hr class="my-5">
+            <div class="text-center">
+                <a href="blog-list.html" class="btn btn-primary">&larr; ブログ記事一覧へ戻る</a>
+            </div>
+        </article>
+    </main>
 
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
@@ -91,17 +141,18 @@
                 </a>
             </div>
         </div>
+        <a href="?cmpscreen" class="cmpfooterlink cmpfooterlinkcmp">Privacy settings</a>
     </footer>
 
     <button id="scrollToTopBtn" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; display: none; z-index: 1000; width: 50px; height: 50px; font-size: 1.5rem; line-height: 1;">&uarr;</button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script defer>
+    AOS.init();
     </script>
-    <script>
-        // ページトップボタンのJavaScript (blog-post-X.html 用)
+    <script defer>
+        // ページトップボタンのJavaScript
         const scrollToTopBtn = document.getElementById('scrollToTopBtn');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 200) {
@@ -111,10 +162,7 @@
             }
         });
         scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
