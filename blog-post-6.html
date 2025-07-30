@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ウェブアクセシビリティの重要性とその実装 - Gamesken29sukiのブログ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html#home">gamesken29suki</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home"><i class="fa-solid fa-house me-1"></i>ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about"><i class="fa-solid fa-user me-1"></i>自己紹介</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services"><i class="fa-solid fa-heart me-1"></i>好きなこと</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#portfolio"><i class="fa-solid fa-laptop-code me-1"></i>作品・プロジェクト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="blog-list.html"><i class="fa-solid fa-newspaper me-1"></i>ブログ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact"><i class="fa-solid fa-envelope me-1"></i>お問い合わせ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <article>
+            <h1 class="mb-4">ウェブアクセシビリティの重要性とその実装</h1>
+            <p class="text-muted mb-4">公開日: 2025年6月10日 | カテゴリ: ウェブ開発, アクセシビリティ</p>
+
+            <img src="https://placehold.jp/800x450.png?text=Web%20Accessibility" class="img-fluid rounded mb-4" alt="ウェブアクセシビリティの画像">
+
+            <p>
+                ウェブアクセシビリティとは、高齢者や障がいを持つ人々を含む、すべての人がウェブコンテンツにアクセスし、
+                利用できるようにすることを指します。これは単なる技術的な考慮事項だけでなく、
+                倫理的、法的、そしてビジネス的な側面からも非常に重要です。
+            </p>
+
+            <h2 class="mt-5">1. なぜウェブアクセシビリティが重要なのか？</h2>
+            <p>
+                <ul>
+                    <li>**誰もが利用できるウェブ:** 障がいのある人も含め、すべての人が情報にアクセスできる公平な社会を実現するため。</li>
+                    <li>**法的要件:** 多くの国や地域で、ウェブアクセシビリティは法的に義務付けられています。</li>
+                    <li>**SEOの向上:** アクセシビリティのベストプラクティスは、検索エンジン最適化（SEO）にも良い影響を与えます。</li>
+                    <li>**ビジネスチャンスの拡大:** より多くのユーザーにリーチし、顧客層を広げることにつながります。</li>
+                </ul>
+            </p>
+
+            <h2 class="mt-5">2. ウェブアクセシビリティの基本的な実装</h2>
+            <p>
+                ウェブアクセシビリティを確保するための基本的なポイントをいくつか紹介します。
+            </p>
+
+            <h3 class="mt-4">2.1. 画像の代替テキスト (`alt`属性)</h3>
+            <p>
+                視覚障がい者がスクリーンリーダーを利用する際、画像の内容を理解できるように、
+                `<img>`タグには必ず適切な`alt`属性を設定します。
+            </p>
+            <pre><code class="language-html">
+&lt;img src="image.jpg" alt="青い空と白い雲が広がる牧草地"&gt;
+            </code></pre>
+
+            <h3 class="mt-4">2.2. セマンティックHTML</h3>
+            <p>
+                意味のあるHTMLタグ（`header`, `nav`, `main`, `footer`, `section`, `article`など）を使用することで、
+                コンテンツの構造をスクリーンリーダーや検索エンジンに正しく伝えることができます。
+                不必要に`div`タグばかり使うのではなく、適切なタグを選びましょう。
+            </p>
+
+            <h3 class="mt-4">2.3. キーボードナビゲーション</h3>
+            <p>
+                マウスを使えないユーザーのために、タブキーやエンターキーだけでウェブサイト全体を操作できるようにします。
+                リンクやボタンが適切にフォーカスされ、視覚的にフォーカスが当たっていることがわかるようにスタイルを設定します。
+            </p>
+
+            <h3 class="mt-4">2.4. 色のコントラスト</h3>
+            <p>
+                テキストと背景の色のコントラストは、色覚障がい者や低視力のユーザーにとって非常に重要です。
+                WCAG（Web Content Accessibility Guidelines）が定める基準を満たすコントラスト比を確保しましょう。
+            </p>
+
+            <h3 class="mt-4">2.5. フォームのラベル</h3>
+            <p>
+                フォームの入力フィールドには、関連する`<label>`タグを`for`属性で紐付けます。
+                これにより、スクリーンリーダーがどのラベルがどの入力フィールドに対応しているかを正確に読み上げることができます。
+            </p>
+            <pre><code class="language-html">
+&lt;label for="username"&gt;ユーザー名:&lt;/label&gt;
+&lt;input type="text" id="username"&gt;
+            </code></pre>
+
+            <p class="mt-5">
+                ウェブアクセシビリティは、単にチェックリストをクリアするものではなく、
+                すべての人にとって使いやすいウェブを構築するという考え方です。
+                これからも継続的に学び、実践していくことが重要です。
+            </p>
+
+            <hr class="my-5">
+            <div class="text-center">
+                <a href="blog-list.html" class="btn btn-primary">&larr; ブログ記事一覧へ戻る</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p>&copy; 2025 gamesken29suki. All rights reserved.</p>
+            <p>
+                <a href="#" class="text-white mx-2">プライバシーポリシー</a> |
+                <a href="#" class="text-white mx-2">利用規約</a>
+            </p>
+            <div class="mt-3">
+                <a href="https://twitter.com/@gamesken29suki2" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/gamesken29suki" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://discord.gg/FF36rTUAue" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+        </div>
+        <a href="?cmpscreen" class="cmpfooterlink cmpfooterlinkcmp">Privacy settings</a>
+    </footer>
+
+    <button id="scrollToTopBtn" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; display: none; z-index: 1000; width: 50px; height: 50px; font-size: 1.5rem; line-height: 1;">&uarr;</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script defer>
+    AOS.init();
+    </script>
+    <script defer>
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

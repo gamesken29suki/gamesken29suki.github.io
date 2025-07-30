@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptの非同期処理：Promiseとasync/awaitの基本 - Gamesken29sukiのブログ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html#home">gamesken29suki</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home"><i class="fa-solid fa-house me-1"></i>ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about"><i class="fa-solid fa-user me-1"></i>自己紹介</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services"><i class="fa-solid fa-heart me-1"></i>好きなこと</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#portfolio"><i class="fa-solid fa-laptop-code me-1"></i>作品・プロジェクト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="blog-list.html"><i class="fa-solid fa-newspaper me-1"></i>ブログ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact"><i class="fa-solid fa-envelope me-1"></i>お問い合わせ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <article>
+            <h1 class="mb-4">JavaScriptの非同期処理：Promiseとasync/awaitの基本</h1>
+            <p class="text-muted mb-4">公開日: 2025年7月5日 | カテゴリ: JavaScript, プログラミング</p>
+
+            <img src="https://placehold.jp/800x450.png?text=Async%20JS" class="img-fluid rounded mb-4" alt="JavaScript非同期処理の画像">
+
+            <p>
+                JavaScriptを学ぶ上で避けて通れないのが「非同期処理」です。
+                特にウェブ開発では、APIからのデータ取得やファイルの読み込みなど、
+                時間がかかる処理を待たずに他の処理を進める必要が頻繁に発生します。
+                今回は、現代のJavaScriptで非同期処理を扱う上で不可欠なPromiseとasync/awaitについて解説します。
+            </p>
+
+            <h2 class="mt-5">1. 非同期処理とは？</h2>
+            <p>
+                JavaScriptは基本的にシングルスレッドで動作します。つまり、一度に一つの処理しか実行できません。
+                しかし、ネットワーク通信などの時間のかかる処理を同期的に（順番に）実行すると、
+                その処理が終わるまでブラウザがフリーズしてしまうことになります。
+                これを避けるために、時間のかかる処理をバックグラウンドで実行し、
+                完了したらその結果を後で受け取る仕組みが「非同期処理」です。
+            </p>
+
+            <h2 class="mt-5">2. Promise (プロミス)</h2>
+            <p>
+                Promiseは、非同期処理の最終的な完了（または失敗）と、その結果の値を表すオブジェクトです。
+                コールバック地獄（Callback Hell）を解消し、非同期処理をより読みやすく、管理しやすくするために導入されました。
+            </p>
+            <pre><code class="language-javascript">
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const success = true; // 仮に成功と失敗を切り替え
+            if (success) {
+                resolve("データ取得成功！");
+            } else {
+                reject("データ取得失敗...");
+            }
+        }, 2000); // 2秒後に実行
+    });
+}
+
+fetchData()
+    .then(data => {
+        console.log(data); // データ取得成功！
+    })
+    .catch(error => {
+        console.error(error); // データ取得失敗...
+    })
+    .finally(() => {
+        console.log("処理が完了しました。");
+    });
+            </code></pre>
+            <p>
+                `then()` で成功時の処理を、`catch()` で失敗時の処理を記述できます。
+            </p>
+
+            <h2 class="mt-5">3. async/await (エイシンク/アウェイト)</h2>
+            <p>
+                async/awaitは、Promiseをより直感的に、まるで同期処理を書くかのように記述できる構文です。
+                ES2017で導入され、非同期コードの可読性を劇的に向上させました。
+            </p>
+            <pre><code class="language-javascript">
+async function loadData() {
+    try {
+        const data = await fetchData(); // fetchData()のPromiseが解決するまで待つ
+        console.log(data); // データ取得成功！
+    } catch (error) {
+        console.error(error); // データ取得失敗...
+    } finally {
+        console.log("処理が完了しました。");
+    }
+}
+
+loadData();
+            </code></pre>
+            <p>
+                `async` キーワードは関数が非同期であることを示し、その関数内で `await` を使用できます。
+                `await` はPromiseの解決を待ち、その結果を返します。エラーハンドリングは `try...catch` で行います。
+            </p>
+
+            <p class="mt-5">
+                Promiseとasync/awaitを理解し使いこなすことで、よりクリーンで保守しやすい非同期コードを書くことができます。
+                現代のウェブ開発では必須の知識と言えるでしょう。
+            </p>
+
+            <hr class="my-5">
+            <div class="text-center">
+                <a href="blog-list.html" class="btn btn-primary">&larr; ブログ記事一覧へ戻る</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p>&copy; 2025 gamesken29suki. All rights reserved.</p>
+            <p>
+                <a href="#" class="text-white mx-2">プライバシーポリシー</a> |
+                <a href="#" class="text-white mx-2">利用規約</a>
+            </p>
+            <div class="mt-3">
+                <a href="https://twitter.com/@gamesken29suki2" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/gamesken29suki" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://discord.gg/FF36rTUAue" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+        </div>
+        <a href="?cmpscreen" class="cmpfooterlink cmpfooterlinkcmp">Privacy settings</a>
+    </footer>
+
+    <button id="scrollToTopBtn" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; display: none; z-index: 1000; width: 50px; height: 50px; font-size: 1.5rem; line-height: 1;">&uarr;</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script defer>
+    AOS.init();
+    </script>
+    <script defer>
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
