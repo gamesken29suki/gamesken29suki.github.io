@@ -113,7 +113,7 @@
                     </div>
                 </div>
             </div>
-        <div class="col">
+            <div class="col">
                 <div class="card h-100 shadow-sm" data-aos="fade-up" data-aos-delay="300">
                     <img src="https://placehold.jp/300x200.png?text=Async%20JS" class="card-img-top" alt="JavaScript非同期処理の画像">
                     <div class="card-body">
@@ -153,7 +153,7 @@
                 </div>
             </div>
 
-        <nav aria-label="Page navigation example" class="mt-5">
+        </div> <nav aria-label="Page navigation example" class="mt-5">
             <ul class="pagination justify-content-center">
                 <li class="page-item disabled">
                     <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
@@ -225,28 +225,28 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // お問い合わせフォームの入力チェックのJavaScript (このページでは不要なら削除)
+        // お問い合わせフォームの入力チェックのJavaScript (このページでは不要なのでコメントアウトのまま)
         // const contactForm = document.getElementById('contactForm');
         // if (contactForm) { // エラー防止のため、要素が存在する場合のみ実行
-        //     contactForm.addEventListener('submit', function(event) {
-        //         event.preventDefault();
-        //         let isValid = true;
-        //         document.querySelectorAll('.invalid-feedback').forEach(feedback => { feedback.style.display = 'none'; });
-        //         document.querySelectorAll('.form-control').forEach(input => { input.classList.remove('is-invalid'); });
+        //    contactForm.addEventListener('submit', function(event) {
+        //        event.preventDefault();
+        //        let isValid = true;
+        //        document.querySelectorAll('.invalid-feedback').forEach(feedback => { feedback.style.display = 'none'; });
+        //        document.querySelectorAll('.form-control').forEach(input => { input.classList.remove('is-invalid'); });
 
-        //         const nameInput = document.getElementById('contactName');
-        //         if (nameInput.value.trim() === '') {
-        //             nameInput.classList.add('is-invalid');
-        //             nameInput.nextElementSibling.style.display = 'block';
-        //             isValid = false;
-        //         }
-        //         // ... (他のバリデーションロジック)
-        //         if (isValid) {
-        //             this.submit();
-        //         } else {
-        //             alert('入力内容に不備があります。もう一度ご確認ください。');
-        //         }
-        //     });
+        //        const nameInput = document.getElementById('contactName');
+        //        if (nameInput.value.trim() === '') {
+        //            nameInput.classList.add('is-invalid');
+        //            nameInput.nextElementSibling.style.display = 'block';
+        //            isValid = false;
+        //        }
+        //        // ... (他のバリデーションロジック)
+        //        if (isValid) {
+        //            this.submit();
+        //        } else {
+        //            alert('入力内容に不備があります。もう一度ご確認ください。');
+        //        }
+        //    });
         // }
     </script>
 </body>
