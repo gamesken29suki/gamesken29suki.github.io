@@ -15,7 +15,7 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5B32V58S');</script>
     <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/3500dfe6d2f95.js" data-cmp-host="a.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="0"></script>
-    
+    <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script><meta name="amp-consent-blocking" content="amp-ad">
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://cdn.consentmanager.net">
     <link rel="preconnect" href="https://a.delivery.consentmanager.net">
@@ -35,6 +35,20 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5B32V58S"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+    <amp-consent id="ConsentManager" layout="nodisplay" type="ConsentManager">
+  <script type="application/json">
+    {
+      "postPromptUI": "postPromptUI",
+      "clientConfig": {
+        "cdid": "3500dfe6d2f95",
+        "params": ""
+      }
+    }
+  </script>
+  <div id="postPromptUI">
+     <button on="tap:ConsentManager.prompt()" role="button">Manage privacy settings</button>
+  </div>
+</amp-consent>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#home">gamesken29suki</a>
