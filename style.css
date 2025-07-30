@@ -16,7 +16,13 @@ h1 {
     font-weight: 700; /* 太字 */
     color: #007bff; /* BootstrapのPrimaryカラー（青） */
 }
-
+/* style.css または <style> タグ内に追記 */
+section#about {
+    opacity: 1 !important;
+    visibility: visible !important;
+    /* AOSによるtransformが適用される可能性があるので、必要であればこれらも初期化 */
+    transform: none !important;
+}
 /* ここから画像スライダーの高さ調整のCSSを追加 (変更なし) */
 #myCarousel .carousel-item {
     height: 400px; /* カルーセルの高さを固定 */
