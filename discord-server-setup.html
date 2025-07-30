@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【初心者向け】初めてのDiscordサーバー作成ガイド：基本設定から公開まで - Gamesken29sukiのホームページ</title>
+    
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdn.consentmanager.net">
+    <link rel="preconnect" href="https://a.delivery.consentmanager.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPCEVG487"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0ZPCEVG487');
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=document.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5B32V58S');</script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5B32V58S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html#home">gamesken29suki</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home"><i class="fa-solid fa-house me-1"></i>ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about"><i class="fa-solid fa-user me-1"></i>自己紹介</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services"><i class="fa-solid fa-heart me-1"></i>好きなこと</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#portfolio"><i class="fa-solid fa-laptop-code me-1"></i>作品・プロジェクト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="blog-list.html"><i class="fa-solid fa-newspaper me-1"></i>ブログ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact"><i class="fa-solid fa-envelope me-1"></i>お問い合わせ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <article>
+            <header class="mb-4 text-center">
+                <h1 class="fw-bold mb-3">【初心者向け】初めてのDiscordサーバー作成ガイド：基本設定から公開まで</h1>
+                <p class="text-muted"><i class="far fa-calendar-alt me-1"></i>公開日: 2025年7月30日 <i class="far fa-folder me-1 ms-3"></i>カテゴリー: Discord, サーバー運営, 初心者向け</p>
+                <img src="https://placehold.jp/800x450.png?text=Discord%20Server%20Setup" class="img-fluid rounded shadow-sm mb-4" alt="Discordサーバーセットアップのイメージ">
+            </header>
+
+            <section class="mb-5">
+                <h2 class="mb-3">はじめに：Discordサーバーで何ができる？</h2>
+                <p>Discordは、ゲーマーだけでなく、あらゆる種類のコミュニティにとって強力なコミュニケーションツールです。テキストチャット、ボイスチャット、画面共有など、多様な機能を一つの場所で利用できます。あなた自身のコミュニティ、友人とのグループ、学習サークルなど、目的に応じて自由にカスタマイズできるのが魅力です。</p>
+                <p>この記事では、初めてDiscordサーバーを作成する方のために、サーバーの作成から基本的な設定、そしてメンバーを招待するまでのステップをわかりやすく解説します。</p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">ステップ1：サーバーを作成しよう</h2>
+                <p>まずはDiscordを開き、画面左側のサーバーリストにある「+」アイコンをクリックします。</p>
+                <ol>
+                    <li>「+」アイコンをクリックし、「サーバーを追加」を選択します。</li>
+                    <li>「一から作成」または「テンプレートから開始」を選びます。今回は「一から作成」を選んでみましょう。</li>
+                    <li>サーバーの目的（「自分と友達のため」または「クラブ/コミュニティのため」）を選択します。目的に応じて推奨される設定が異なりますが、後から変更可能です。</li>
+                    <li>サーバーの名前とサーバーアイコンを設定します。これらはコミュニティの顔となるので、わかりやすいものを選びましょう。</li>
+                    <li>「作成」をクリックすれば、あなただけのDiscordサーバーが誕生します！</li>
+                </ol>
+                <img src="https://placehold.jp/600x350.png?text=Create%20Discord%20Server" class="img-fluid rounded shadow-sm my-3" alt="Discordサーバー作成画面のイメージ">
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">ステップ2：チャンネルを整理しよう</h2>
+                <p>サーバーを作成したら、次にチャンネルを整理しましょう。チャンネルは、話題ごとに会話を分けるための部屋のようなものです。</p>
+                <ul>
+                    <li>**カテゴリの作成:** チャンネルをグループ化するために「カテゴリ」を作成します。例えば、「情報」「一般」「ゲーム」「ボイス」などです。</li>
+                    <li>**テキストチャンネルの作成:**
+                        <ul>
+                            <li><strong>#お知らせ:</strong> サーバーの重要な告知を投稿するチャンネルです。権限を設定して、管理者のみが書き込めるようにすると良いでしょう。</li>
+                            <li><strong>#ルール:</strong> サーバーの利用規約やマナーを記載するチャンネルです。</li>
+                            <li><strong>#雑談:</strong> メンバーが自由に会話できるメインチャンネル。</li>
+                            <li><strong>#自己紹介:</strong> 新規メンバーが自己紹介をするためのチャンネル。</li>
+                        </ul>
+                    </li>
+                    <li>**ボイスチャンネルの作成:**
+                        <ul>
+                            <li><strong>一般通話:</strong> メンバーが自由にボイスチャットできるチャンネル。</li>
+                            <li><strong>作業部屋:</strong> 一緒に作業する際に利用するチャンネル。</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>チャンネル名の横にある「+」アイコンや、カテゴリ名の右クリックから「チャンネルを作成」を選択して追加できます。必要に応じてチャンネルの権限も設定しましょう。</p>
+                <img src="https://placehold.jp/600x350.png?text=Discord%20Channels" class="img-fluid rounded shadow-sm my-3" alt="Discordチャンネル整理画面のイメージ">
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">ステップ3：ロールと権限を理解する</h2>
+                <p>ロール（役割）は、サーバー内のメンバーに特定の権限を与えるための機能です。適切に設定することで、サーバーの秩序を保ち、運営を効率化できます。</p>
+                <ol>
+                    <li>「サーバー設定」→「ロール」を選択します。</li>
+                    <li>「ロールを作成」をクリックし、新しいロールの名前（例: 管理者、モデレーター、メンバー）と色を設定します。</li>
+                    <li>各ロールに与える権限を細かく設定します。
+                        <ul>
+                            <li>**@everyone:** これはデフォルトで全員に付与されるロールです。基本的なチャット権限のみを与え、重要な権限はオフにすることをおすすめします。</li>
+                            <li>**メンバー:** サーバーに参加した一般的なユーザーに自動付与されるロールです。チャット、絵文字の使用などの基本的な権限を与えます。</li>
+                            <li>**モデレーター:** 問題のある投稿の削除、メンバーのミュート・キックなど、サーバー管理の一部を任せるロールです。</li>
+                            <li>**管理者:** サーバー設定の変更、ロールの管理など、サーバーのすべての権限を持つロールです。信頼できるメンバーにのみ付与しましょう。</li>
+                        </ul>
+                    </li>
+                    <li>メンバーにロールを付与するには、メンバーリストから対象のメンバーを右クリックし、「ロール」を選択してチェックを入れます。</li>
+                </ol>
+                <img src="https://placehold.jp/600x350.png?text=Discord%20Roles" class="img-fluid rounded shadow-sm my-3" alt="Discordロール設定画面のイメージ">
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">ステップ4：招待リンクを作成してメンバーを迎えよう</h2>
+                <p>サーバーの準備ができたら、いよいよメンバーを招待しましょう！</p>
+                <ol>
+                    <li>サーバー名をクリックし、「友達を招待」を選択します。</li>
+                    <li>表示される招待リンクはデフォルトで有効期限や使用回数の制限があります。「招待リンクを編集」をクリックして、設定をカスタマイズできます。
+                        <ul>
+                            <li>**有効期限:** リンクが有効な期間（30分、1時間、1日、7日、無期限）</li>
+                            <li>**最大使用回数:** リンクが使用できる回数（1回、5回、10回、100回、無制限）</li>
+                        </ul>
+                    </li>
+                    <li>一般公開するコミュニティの場合は「無期限」「使用回数無制限」のリンクを作成すると便利です。</li>
+                    <li>作成したリンクをコピーして、SNSやウェブサイトなどで共有し、メンバーを招待しましょう。</li>
+                </ol>
+                <p class="alert alert-warning"><strong>注意:</strong> 無期限・無制限の招待リンクは、意図しないユーザーの流入を招く可能性もあります。サーバーの目的に合わせて、適切な設定を行いましょう。</p>
+                <img src="https://placehold.jp/600x350.png?text=Discord%20Invite" class="img-fluid rounded shadow-sm my-3" alt="Discord招待リンク作成画面のイメージ">
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">サーバー作成後の最初のチェックリスト</h2>
+                <p>サーバーが公開されたら、以下の点も確認しておきましょう。</p>
+                <ul>
+                    <li>**サーバーガイドライン（ルール）の明示:** ルールチャンネルを作成し、サーバーでの行動規範を明確にすることで、トラブルを未然に防ぎます。</li>
+                    <li>**認証レベルの設定:** スパム対策のため、サーバー設定の「モデレーション」から認証レベルを調整できます。（例: 電話番号認証済みのユーザーのみ参加可能にするなど）</li>
+                    <li>**自己紹介チャンネルの推奨:** 新規メンバーが自己紹介することで、コミュニティに馴染みやすくなります。</li>
+                </ul>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">まとめ：あなたのDiscordサーバーが動き出す！</h2>
+                <p>これで、Discordサーバーの基本的な作成と設定が完了しました。最初は戸惑うこともあるかもしれませんが、少しずつ触っていくうちに、あなたにとって最適なコミュニティの場を築けるはずです。</p>
+                <p>次の記事では、さらに踏み込んだサーバー運営のコツや、コミュニティを活性化させるための機能について解説します。ぜひ、あなたのDiscordライフを楽しんでください！</p>
+            </section>
+
+            <div class="d-flex justify-content-between align-items-center mt-5">
+                <a href="blog-list.html" class="btn btn-primary"><i class="fas fa-arrow-left me-2"></i>記事一覧へ戻る</a>
+                </div>
+        </article>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p>&copy; 2025 gamesken29suki. All rights reserved.</p>
+            <p>
+                <a href="privacy-policy.html" class="text-white mx-2">プライバシーポリシー</a> |
+                <a href="terms-of-service.html" class="text-white mx-2">利用規約</a>
+            </p>
+            <div class="mt-3">
+                <a href="https://twitter.com/@gamesken29suki2" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/gamesken29suki" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://discord.gg/FF36rTUAue" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+        </div>
+        <a href="?cmpscreen" class="cmpfooterlink cmpfooterlinkcmp">Privacy settings</a>
+    </footer>
+
+    <button id="scrollToTopBtn" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; display: none; z-index: 1000; width: 50px; height: 50px; font-size: 1.5rem; line-height: 1;">&uarr;</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+    <script defer>
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
