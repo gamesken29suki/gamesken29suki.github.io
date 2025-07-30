@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Mod開発入門：Forgeの導入と簡単なアイテムの作り方 - Gamesken29sukiのホームページ</title>
+    
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdn.consentmanager.net">
+    <link rel="preconnect" href="https://a.delivery.consentmanager.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPCEVG487"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0ZPCEVG487');
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=document.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5B32V58S');</script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5B32V58S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html#home">gamesken29suki</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home"><i class="fa-solid fa-house me-1"></i>ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about"><i class="fa-solid fa-user me-1"></i>自己紹介</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services"><i class="fa-solid fa-heart me-1"></i>好きなこと</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#portfolio"><i class="fa-solid fa-laptop-code me-1"></i>作品・プロジェクト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="blog-list.html"><i class="fa-solid fa-newspaper me-1"></i>ブログ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact"><i class="fa-solid fa-envelope me-1"></i>お問い合わせ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <article>
+            <header class="mb-4 text-center">
+                <h1 class="fw-bold mb-3">Minecraft Mod開発入門：Forgeの導入と簡単なアイテムの作り方</h1>
+                <p class="text-muted"><i class="far fa-calendar-alt me-1"></i>公開日: 2025年8月8日 <i class="far fa-folder me-1 ms-3"></i>カテゴリー: Minecraft, Mod開発, Forge, Java, プログラミング</p>
+                <img src="https://placehold.jp/800x450.png?text=Minecraft%20Modding" class="img-fluid rounded shadow-sm mb-4" alt="Minecraft Mod開発のイメージ">
+            </header>
+
+            <section class="mb-5">
+                <h2 class="mb-3">はじめに：あなたもマインクラフトの世界を拡張しよう！</h2>
+                <p>Minecraftの楽しみ方は無限大ですが、自分で新しいブロックやアイテムを追加できたら、もっと面白そうだと思いませんか？「Mod開発」は、そんなあなたの夢を叶える技術です。</p>
+                <p>今回は、MinecraftのMod開発で最も一般的に使われるフレームワーク「Forge（フォージ）」の導入方法から、Javaを使ってごく簡単なオリジナルアイテムを作成するまでの基本的な流れを解説します。「プログラミングは初めて」という方も大丈夫。一緒にMinecraftの世界を拡張する第一歩を踏み出しましょう！</p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">ステップ1：開発環境の準備</h2>
+                <p>Mod開発を始めるには、いくつかのツールが必要です。</p>
+                <h3 class="mt-4">1. Java Development Kit (JDK) のインストール</h3>
+                <p>MinecraftのModはJava言語で書かれているため、Javaプログラムを開発・実行するためのJDKが必要です。Oracle JDKやOpenJDKなどがありますが、ここではOpenJDKをおすすめします。</p>
+                <ul>
+                    <li>**ダウンロード:** 最新の安定版JDKを公式サイトからダウンロードし、インストールしてください。</li>
+                    <li>**環境変数の設定:** インストール後、`JAVA_HOME`などの環境変数を設定する必要がある場合があります。これは使用するIDE（統合開発環境）によって異なりますが、もし必要であればウェブ検索で「JDK 環境変数設定 Windows/Mac」などで調べてみてください。</li>
+                </ul>
+                
+                <h3 class="mt-4">2. 統合開発環境 (IDE) の導入</h3>
+                <p>Javaのコードを書くためのツールです。おすすめは以下の2つです。</p>
+                <ul>
+                    <li>**IntelliJ IDEA (Community Edition):** 無料で高機能、Mod開発に非常に適しています。</li>
+                    <li>**Eclipse:** こちらも無料で人気がありますが、IntelliJ IDEAの方が初心者には直感的かもしれません。</li>
+                </ul>
+                <p>今回はIntelliJ IDEAのCommunity Editionを前提に進めます。公式サイトからダウンロードしてインストールしてください。</p>
+                <img src="https://placehold.jp/600x350.png?text=IDE%20Screenshot" class="img-fluid rounded shadow-sm my-3" alt="IntelliJ IDEAのスクリーンショットイメージ">
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">ステップ2：Minecraft Forge MDKのセットアップ</h2>
+                <p>Forgeは、MinecraftとModを繋ぐ土台となるフレームワークです。Mod開発には「MDK (Mod Development Kit)」という開発者向けのパッケージを使います。</p>
+                <h3 class="mt-4">1. Forge MDKのダウンロード</h3>
+                <ul>
+                    <li>**Forge公式サイトへアクセス:** <a href="https://files.minecraftforge.net/" target="_blank">files.minecraftforge.net</a></li>
+                    <li>**Minecraftのバージョンを選択:** 開発したいMinecraftのバージョン（例: 1.16.5, 1.18.2など）を選びます。</li>
+                    <li>**「MDK」をダウンロード:** 推奨版（Recommended）の「MDK」リンクをクリックしてダウンロードします。</li>
+                </ul>
+                
+                <h3 class="mt-4">2. プロジェクトのセットアップ</h3>
+                <ol>
+                    <li>ダウンロードしたMDKのzipファイルを任意の場所に展開（解凍）します。</li>
+                    <li>IntelliJ IDEAを起動し、「Open」または「Import Project」を選択し、展開したMDKフォルダを開きます。</li>
+                    <li>Gradleプロジェクトとして認識されるので、右下に出てくる「Load Gradle Project」や「Trust Project」などをクリックしてインポートします。初回は必要なファイルのダウンロードに時間がかかります。</li>
+                    <li>プロジェクトが完全に読み込まれ、左側のプロジェクトエクスプローラーにファイル構造が表示されたら準備完了です。特に`src/main/java`フォルダの下にModのコードを記述します。</li>
+                </ol>
+                <p class="alert alert-info"><strong>ヒント:</strong> Gradleの同期がうまくいかない場合は、IntelliJ IDEAの右側にあるGradleタブから「Refresh Gradle Project」を試してみてください。</p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">ステップ3：初めてのModとアイテムを作成する！</h2>
+                <p>いよいよコードを書いて、自分だけのアイテムを作ってみましょう。今回は、シンプルな「カスタムインゴット」を作成します。</p>
+                
+                <h3 class="mt-4">1. Modのメインクラスの確認</h3>
+                <p>`src/main/java/com/example/examplemod/ExampleMod.java` (パスはMDKによって異なる場合があります) を開いてください。これがModのメインエントリポイントとなるクラスです。</p>
+                <pre><code class="language-java">// ExampleMod.java (一部抜粋)
+package com.example.examplemod;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
+@Mod("examplemod") // Mod ID
+public class ExampleMod {
+    public static final String MOD_ID = "examplemod"; // Mod IDを定数として定義
+
+    public ExampleMod() {
+        // コンストラクタでイベントリスナーを登録
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        // 初期設定
+    }
+}
+</code></pre>
+                <p>`MOD_ID`は、Modを一意に識別するためのIDです。これを覚えておいてください。</p>
+                
+                <h3 class="mt-4">2. 新しいアイテムクラスの作成</h3>
+                <p>`src/main/java/com/example/examplemod/` の下に、新しいJavaクラス「`CustomIngot.java`」を作成します。</p>
+                <pre><code class="language-java">// CustomIngot.java
+package com.example.examplemod; // パッケージ名はあなたのModに合わせてください
+
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
+
+public class CustomIngot extends Item {
+    public CustomIngot() {
+        super(new Item.Properties().tab(CreativeModeTab.TAB_MISC)); // 雑貨タブに表示
+    }
+}
+</code></pre>
+                <p>これは、Minecraftの既存の`Item`クラスを継承し、クリエイティブタブの「雑貨」タブに表示されるように設定しただけのシンプルなアイテムです。</p>
+
+                <h3 class="mt-4">3. アイテムの登録とテクスチャの準備</h3>
+                <p>作成したアイテムをMinecraftに認識させるために登録する必要があります。そして、アイテムの見た目（テクスチャ）も必要です。</p>
+                <p>まず、`src/main/resources/assets/[MOD_ID]/textures/item/` の下に、`custom_ingot.png` という名前の画像を配置してください。これはアイテムのアイコンになります。サイズは16x16ピクセルが一般的です。</p>
+                <p>次に、`src/main/resources/assets/[MOD_ID]/models/item/` の下に、`custom_ingot.json` という名前のファイルを作成し、以下の内容を記述します。</p>
+                <pre><code class="language-json">// custom_ingot.json
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "[MOD_ID]:item/custom_ingot"
+  }
+}
+</code></pre>
+                <p>`[MOD_ID]`の部分は、あなたのModのID（例: `examplemod`）に置き換えてください。</p>
+                
+                <h3 class="mt-4">4. アイテムをMinecraftに登録する</h3>
+                <p>Modのメインクラス (`ExampleMod.java`) に戻り、アイテムを登録するコードを追加します。</p>
+                <pre><code class="language-java">// ExampleMod.java (アイテム登録部分を追加)
+package com.example.examplemod;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+@Mod(ExampleMod.MOD_ID) // Mod ID
+public class ExampleMod {
+    public static final String MOD_ID = "examplemod"; // Mod IDを定数として定義
+
+    // アイテムのDeferredRegisterを初期化
+    public static final DeferredRegister&lt;Item&gt; ITEMS =
+            DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
+
+    // カスタムインゴットを登録
+    public static final RegistryObject&lt;Item&gt; CUSTOM_INGOT =
+            ITEMS.register("custom_ingot", CustomIngot::new);
+
+    public ExampleMod() {
+        // アイテムレジストリをイベントバスに登録
+        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        // 初期設定
+    }
+}
+</code></pre>
+                <p>最後に、アイテムの名前を表示するための言語ファイルも作成します。</p>
+                <p>`src/main/resources/assets/[MOD_ID]/lang/` の下に、`en_us.json` (英語) と `ja_jp.json` (日本語) を作成します。</p>
+                <pre><code class="language-json">// en_us.json
+{
+  "item.examplemod.custom_ingot": "Custom Ingot"
+}
+</code></pre>
+                <pre><code class="language-json">// ja_jp.json
+{
+  "item.examplemod.custom_ingot": "カスタムインゴット"
+}
+</code></pre>
+                <p>`[MOD_ID]`をあなたのMod IDに置き換えてください。</p>
+                <img src="https://placehold.jp/600x350.png?text=Custom%20Item%20in%20Minecraft" class="img-fluid rounded shadow-sm my-3" alt="Minecraft内のカスタムアイテムイメージ">
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">ステップ4：Modをテストする</h2>
+                <p>IntelliJ IDEAの右上にある実行構成のドロップダウンメニューから「`runClient`」を選択し、実行ボタン（緑色の再生アイコン）をクリックします。これにより、ModがロードされたMinecraftのインスタンスが起動します。</p>
+                <p>ゲームが起動したら、クリエイティブインベントリを開き、雑貨タブを探してみてください。「カスタムインゴット」が見つかるはずです！</p>
+                <p class="alert alert-warning"><strong>トラブルシューティング:</strong></p>
+                <ul>
+                    <li>**起動しない:** Gradleの同期エラー、JDKのバージョン違い、コードの構文エラーなどが考えられます。IntelliJ IDEAの「Run」ウィンドウや「Gradle」ウィンドウに表示されるエラーメッセージを確認してください。</li>
+                    <li>**アイテムが表示されない:** テクスチャやモデルのパスが間違っている、アイテムの登録コードに誤りがある、言語ファイルが正しくないなどの可能性があります。Mod IDが正しく設定されているか、ファイル名が正しいかを確認しましょう。</li>
+                </ul>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">まとめ：Mod開発の旅は始まったばかり！</h2>
+                <p>この記事では、Minecraft Forgeを使ったMod開発の最初のステップとして、環境構築と簡単なカスタムアイテムの作成方法を解説しました。これであなたも、MinecraftのMod開発者としての第一歩を踏み出しましたね！</p>
+                <p>Mod開発の世界は非常に奥深く、ブロックの追加、レシピの定義、GUIの作成、エンティティの挙動変更など、様々なことができます。今後の学習のヒントとして、以下のことを試してみてください。</p>
+                <ul>
+                    <li>**公式ドキュメントを読む:** Forgeの公式ドキュメントは非常に充実しています。</li>
+                    <li>**他のModのソースコードを見る:** GitHubなどで公開されているModのコードを参考にすると良い勉強になります。</li>
+                    <li>**オンラインチュートリアルを探す:** YouTubeや技術ブログには、Mod開発の詳しいチュートリアルがたくさんあります。</li>
+                </ul>
+                <p>あなたの創造力で、Minecraftの世界に新しい命を吹き込んでください！</p>
+            </section>
+
+            <div class="d-flex justify-content-between align-items-center mt-5">
+                <a href="web-design-intro.html" class="btn btn-secondary"><i class="fas fa-arrow-left me-2"></i>前の記事へ</a>
+                <a href="blog-list.html" class="btn btn-primary">記事一覧へ戻る<i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+        </article>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p>&copy; 2025 gamesken29suki. All rights reserved.</p>
+            <p>
+                <a href="privacy-policy.html" class="text-white mx-2">プライバシーポリシー</a> |
+                <a href="terms-of-service.html" class="text-white mx-2">利用規約</a>
+            </p>
+            <div class="mt-3">
+                <a href="https://twitter.com/@gamesken29suki2" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/gamesken29suki" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://discord.gg/FF36rTUAue" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+        </div>
+        <a href="?cmpscreen" class="cmpfooterlink cmpfooterlinkcmp">Privacy settings</a>
+    </footer>
+
+    <button id="scrollToTopBtn" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; display: none; z-index: 1000; width: 50px; height: 50px; font-size: 1.5rem; line-height: 1;">&uarr;</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+    <script defer>
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

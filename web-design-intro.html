@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ウェブサイト作成超入門：HTMLとCSSだけでシンプルなポートフォリオサイトを作ろう - Gamesken29sukiのホームページ</title>
+    
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdn.consentmanager.net">
+    <link rel="preconnect" href="https://a.delivery.consentmanager.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZPCEVG487"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0ZPCEVG487');
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=document.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5B32V58S');</script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5B32V58S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html#home">gamesken29suki</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home"><i class="fa-solid fa-house me-1"></i>ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about"><i class="fa-solid fa-user me-1"></i>自己紹介</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services"><i class="fa-solid fa-heart me-1"></i>好きなこと</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#portfolio"><i class="fa-solid fa-laptop-code me-1"></i>作品・プロジェクト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="blog-list.html"><i class="fa-solid fa-newspaper me-1"></i>ブログ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact"><i class="fa-solid fa-envelope me-1"></i>お問い合わせ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <article>
+            <header class="mb-4 text-center">
+                <h1 class="fw-bold mb-3">ウェブサイト作成超入門：HTMLとCSSだけでシンプルなポートフォリオサイトを作ろう</h1>
+                <p class="text-muted"><i class="far fa-calendar-alt me-1"></i>公開日: 2025年8月7日 <i class="far fa-folder me-1 ms-3"></i>カテゴリー: ウェブ開発, HTML, CSS, プログラミング</p>
+                <img src="https://placehold.jp/800x450.png?text=Web%20Design%20Intro" class="img-fluid rounded shadow-sm mb-4" alt="ウェブサイト作成入門のイメージ">
+            </header>
+
+            <section class="mb-5">
+                <h2 class="mb-3">はじめに：なぜウェブサイトを作るのか？</h2>
+                <p>インターネットの世界へようこそ！今、あなたが見ているこの「gamesken29sukiのホームページ」も、HTMLとCSSという技術を使って作られています。ウェブサイトを作ることは、自分のアイデアや情報を世界に発信するための強力な手段です。</p>
+                <p>「難しそう…」と感じるかもしれませんが、ご安心ください。この記事では、プログラミング経験がなくても、HTML（構造）とCSS（見た目）だけでシンプルなポートフォリオサイトを作る方法を、順を追って分かりやすく解説します。あなたも自分だけのウェブサイトを作ってみませんか？</p>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">ステップ1：ウェブサイトの基本「HTML」を理解しよう</h2>
+                <p>HTML (HyperText Markup Language) は、ウェブページの「骨格」を作る言語です。テキスト、画像、リンクなどを配置し、情報に意味を与えます。</p>
+                
+                <h3 class="mt-4">HTMLファイルの作成と基本構造</h3>
+                <p>まずは、メモ帳やVS Code（おすすめのテキストエディタです）などのテキストエディタを開き、以下のコードを記述して「`index.html`」という名前で保存してください。</p>
+                <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;私のポートフォリオサイト&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Gamesken29sukiのポートフォリオ&lt;/h1&gt;
+    &lt;p&gt;こんにちは！ウェブサイト作成を学んでいます。&lt;/p&gt;
+    &lt;img src="https://placehold.jp/300x200.png?text=My%20Photo" alt="私の写真"&gt;
+    &lt;a href="https://twitter.com/gamesken29suki2"&gt;Twitterはこちら&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                <ul>
+                    <li>`<!DOCTYPE html>`: HTMLのバージョンを宣言。</li>
+                    <li>`<html>`: 全てのHTML要素を囲むルート要素。`lang="ja"`で日本語であることを示します。</li>
+                    <li>`<head>`: ページの設定情報（ブラウザには表示されない）
+                        <ul>
+                            <li>`<meta charset="UTF-8">`: 文字コードの指定。</li>
+                            <li>`<meta name="viewport" ...>`: レスポンシブデザイン（様々な画面サイズに対応）のための設定。</li>
+                            <li>`<title>`: ブラウザのタブに表示されるページのタイトル。</li>
+                        </ul>
+                    </li>
+                    <li>`<body>`: ページに表示される全てのコンテンツ（テキスト、画像など）。
+                        <ul>
+                            <li>`<h1>`: 見出し（一番大きい）。</li>
+                            <li>`<p>`: 段落。</li>
+                            <li>`<img>`: 画像の表示。`src`で画像のURL、`alt`で画像が表示されない場合の代替テキストを指定。</li>
+                            <li>`<a>`: リンク。`href`でリンク先のURLを指定。</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>ファイルをブラウザで開いてみてください。シンプルなテキストと画像、リンクが表示されたはずです。</p>
+                <img src="https://placehold.jp/600x350.png?text=Basic%20HTML%20Page" class="img-fluid rounded shadow-sm my-3" alt="基本的なHTMLページのイメージ">
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">ステップ2：ウェブサイトの見た目「CSS」で飾ろう</h2>
+                <p>CSS (Cascading Style Sheets) は、HTMLで作成した骨格に「色」「フォント」「レイアウト」などのスタイル（見た目）を適用する言語です。CSSを使うことで、ウェブサイトをより魅力的で分かりやすくすることができます。</p>
+
+                <h3 class="mt-4">CSSファイルの作成とHTMLへのリンク</h3>
+                <p>新しく「`style.css`」という名前のファイルを作成し、以下のコードを記述してください。</p>
+                <pre><code class="language-css">/* style.css */
+body {
+    font-family: 'Arial', sans-serif; /* フォントをArialに設定 */
+    background-color: #f4f4f4; /* 背景色を薄いグレーに設定 */
+    color: #333; /* 文字色を濃いグレーに設定 */
+    margin: 20px; /* 余白を設定 */
+}
+
+h1 {
+    color: #007bff; /* 見出しの色を青に設定 */
+    text-align: center; /* 中央寄せ */
+}
+
+p {
+    line-height: 1.6; /* 行の高さを調整 */
+}
+
+img {
+    max-width: 100%; /* 画像が親要素からはみ出さないように */
+    height: auto; /* 高さを自動調整 */
+    display: block; /* ブロック要素にして中央寄せ可能に */
+    margin: 20px auto; /* 上下20px、左右中央寄せ */
+    border: 3px solid #007bff; /* 青い枠線を追加 */
+    border-radius: 8px; /* 角を丸くする */
+}
+
+a {
+    color: #28a745; /* リンクの色を緑に設定 */
+    text-decoration: none; /* 下線をなくす */
+}
+
+a:hover {
+    text-decoration: underline; /* ホバー時に下線を表示 */
+}
+</code></pre>
+                <p>次に、この`style.css`ファイルを`index.html`に読み込ませる必要があります。`index.html`の`<head>`タグ内に以下の1行を追加してください。</p>
+                <pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;私のポートフォリオサイト&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt; &lt;!-- この行を追加 --&gt;
+&lt;/head&gt;
+</code></pre>
+                <p>`index.html`を保存してブラウザで再読み込みしてみてください。背景色が変わったり、フォントや画像の見た目が変わったはずです。</p>
+                <img src="https://placehold.jp/600x350.png?text=HTML%20with%20CSS" class="img-fluid rounded shadow-sm my-3" alt="CSSを適用したHTMLページのイメージ">
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">ステップ3：ポートフォリオサイトのコンテンツを充実させよう</h2>
+                <p>上記で学んだHTMLとCSSを使って、あなたのポートフォリオサイトをより充実させていきましょう。以下のようなセクションを追加することをおすすめします。</p>
+                
+                <h3 class="mt-4">サイトの構成例</h3>
+                <ul>
+                    <li>**自己紹介 (About Me):** 自分の名前、興味、簡単な経歴などを記述。</li>
+                    <li>**スキル (Skills):** できること（例: プログラミング言語、デザインツール、ゲームの腕前など）をリスト形式で紹介。</li>
+                    <li>**作品・プロジェクト (Portfolio/Projects):** 作成したゲーム、ウェブサイト、デザイン、Modなどの実績を紹介。スクリーンショットやリンクを含めると良いでしょう。</li>
+                    <li>**お問い合わせ (Contact):** メールアドレスやSNSのリンクなど、連絡先を記載。</li>
+                </ul>
+                
+                <h3 class="mt-4">より高度なCSSのアイデア</h3>
+                <ul>
+                    <li>**セクションの区切り:** 各セクションを`<section>`タグで囲み、CSSで背景色を変えたり、パディング（内側の余白）を設定したりして視覚的に区切る。</li>
+                    <li>**Flexbox/Grid:** レイアウトをより複雑にしたい場合は、CSSのFlexboxやGridを学ぶと、要素の配置がとても楽になります。</li>
+                    <li>**フォント:** Google Fontsなどから好きなフォントを選んで、サイトの雰囲気を変えることができます。</li>
+                    <li>**ホバーエフェクト:** リンクやボタンにマウスカーソルを合わせたときに色が変わるなどのアニメーションを追加すると、よりプロフェッショナルな印象になります。</li>
+                </ul>
+            </section>
+
+            <section class="mb-5">
+                <h2 class="mb-3">まとめ：あなたもウェブクリエイターの仲間入り！</h2>
+                <p>この記事では、HTMLとCSSの基本を使って、シンプルなウェブサイトを作成する方法を解説しました。まずは真似してコードを書いてみること、そして少しずつ自分でアレンジしてみることが上達の近道です。</p>
+                <p>ウェブ開発の世界は奥深く、JavaScriptを学ぶことで動的な要素を追加したり、フレームワークを使って大規模なサイトを効率的に構築したりすることも可能です。しかし、全ての基礎はHTMLとCSSにあります。</p>
+                <p>今回作ったサイトを土台に、あなただけの素晴らしいポートフォリオサイトを完成させてください！</p>
+            </section>
+
+            <div class="d-flex justify-content-between align-items-center mt-5">
+                <a href="blog-list.html" class="btn btn-primary"><i class="fas fa-arrow-left me-2"></i>記事一覧へ戻る</a>
+                </div>
+        </article>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p>&copy; 2025 gamesken29suki. All rights reserved.</p>
+            <p>
+                <a href="privacy-policy.html" class="text-white mx-2">プライバシーポリシー</a> |
+                <a href="terms-of-service.html" class="text-white mx-2">利用規約</a>
+            </p>
+            <div class="mt-3">
+                <a href="https://twitter.com/@gamesken29suki2" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/gamesken29suki" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://discord.gg/FF36rTUAue" target="_blank" class="text-white mx-2 fs-4">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+        </div>
+        <a href="?cmpscreen" class="cmpfooterlink cmpfooterlinkcmp">Privacy settings</a>
+    </footer>
+
+    <button id="scrollToTopBtn" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; display: none; z-index: 1000; width: 50px; height: 50px; font-size: 1.5rem; line-height: 1;">&uarr;</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+    <script defer>
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
