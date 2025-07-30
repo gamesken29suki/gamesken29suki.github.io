@@ -34,3 +34,19 @@ section#about {
     height: 100%; /* 親要素 (carousel-item) の高さに合わせる */
     width: 100%; /* 親要素 (carousel-item) の幅に合わせる */
 }
+/* ブログセクションがAOSで非表示になるのを防ぐCSS */
+section#blog {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+/* その他のAOSを使用しているセクションにも同様のCSSを適用することを検討してください */
+/* 例：#services, #contact, #faq など */
+section#services,
+section#contact,
+section#faq {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
