@@ -27,9 +27,9 @@
 
 ## 🚀 My Projects
 
-* **[プロジェクト名1]** - [簡単な説明。例：A simple weather app built with JavaScript and a third-party API.]
-    * [GitHubリポジトリへのリンク]
-    * [デモやライブサイトへのリンク（もしあれば）]
+* **[gamesken29suki.github.io]** - [簡単な説明。例：A simple weather app built with JavaScript and a third-party API.]
+    * [https://github.com/gamesken29suki/gamesken29suki.github.io]
+    * [https://gamesken29suki.github.io/]
 
 * **[プロジェクト名2]** - [簡単な説明。例：A responsive portfolio website using HTML and CSS.]
     * [GitHubリポジトリへのリンク]
