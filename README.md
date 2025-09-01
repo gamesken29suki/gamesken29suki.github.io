@@ -31,9 +31,9 @@
     * [https://github.com/gamesken29suki/gamesken29suki.github.io]
     * [https://gamesken29suki.github.io/]
 
-* **[プロジェクト2]** - []
-    * [リンク]
-    * [リンク]
+* **[Project 2]** - []
+    * [Links]
+    * [Links]
 
 ---
 
