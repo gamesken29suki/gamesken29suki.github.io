@@ -1,0 +1,29 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily" #インターバルや実行時間帯はお好みで
+      time: "06:00"
+      timezone: "Japan"
+    commit-message:
+      prefix: "Common"
+      include: "scope"
+    labels:
+      - "dependencies"  #ラベルは適宜選択・作成する
+  - package-ecosystem: "npm"
+    directory: "src/"   #Dependabotはリポジトリ全体を再帰的にチェックしてくれないので、検査対象のディレクトリを都度指定する
+    schedule:
+      interval: "daily"
+      time: "06:00"
+      timezone: "Japan"
+    commit-message:
+      prefix: "Frontend"
+      include: "scope"
+    labels:
+      - "dependencies"
