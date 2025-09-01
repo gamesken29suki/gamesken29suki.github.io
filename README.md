@@ -49,6 +49,7 @@
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=gamesken29suki&show_icons=true&theme=tokyonight" alt="stats" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=gamesken29suki&theme=tokyonight" alt="streak" />
+  <img src="https://komarev.com/ghpvc/?username=gamesken29suki&label=Profile%20views&color=0e75b6&style=flat" alt="gamesken29suki" />
 </p>
 
 ---
