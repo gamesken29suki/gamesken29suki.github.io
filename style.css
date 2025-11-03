@@ -39,7 +39,6 @@ header {
 .site-title-area {
     padding-top: 20px;
     padding-bottom: 10px;
-   background-color: ffffdd;
 }
 
 header h1 {
@@ -401,5 +400,6 @@ body.dark-mode .article-container {
 body.dark-mode .hobby-card {
     background-color: #404040; /* 趣味カードの背景を暗い灰色に */
 }
+
 
 
