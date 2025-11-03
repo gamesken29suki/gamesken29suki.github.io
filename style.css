@@ -255,3 +255,16 @@ footer a {
 footer a:hover {
     color: var(--color-secondary);
 }
+
+/* -------------------- ブログ記事内の引用符のスタイル -------------------- */
+blockquote {
+    /* 引用部分の背景に薄いアクセントカラーを適用 */
+    background-color: var(--color-secondary); 
+    /* 左側にメインの暖色でラインを引く (INFPらしい優しさの表現) */
+    border-left: 5px solid var(--color-primary); 
+    padding: 20px 25px;
+    margin: 30px 0;
+    font-style: italic; /* 斜体で情緒的な印象に */
+    color: var(--color-text);
+    border-radius: 0 10px 10px 0; /* 左側だけ角を角ばらせる */
+}
