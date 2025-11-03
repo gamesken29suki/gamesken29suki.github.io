@@ -192,6 +192,28 @@ section.visible {
     color: gray;
 }
 
+/* カテゴリフィルタボタンのスタイル */
+.filter-btn {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    border: 1px solid var(--color-secondary);
+    padding: 8px 15px;
+    margin-right: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: var(--color-secondary);
+}
+
+.filter-btn.active {
+    background-color: var(--color-primary); /* アクティブなボタンはメイン色 */
+    color: var(--color-light);
+    border-color: var(--color-primary);
+}
 
 /* -------------------- お問い合わせフォーム -------------------- */
 
@@ -378,3 +400,4 @@ body.dark-mode .article-container {
 body.dark-mode .hobby-card {
     background-color: #404040; /* 趣味カードの背景を暗い灰色に */
 }
+
