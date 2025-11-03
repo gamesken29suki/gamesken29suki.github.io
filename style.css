@@ -26,9 +26,22 @@ body {
 header {
     background-color: var(--color-primary);
     color: var(--color-light);
-    padding: 15px 0;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* サイトタイトルエリアのスタイルを追加 */
+.site-title-area {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+header h1 {
+    margin: 0; /* タイトル上部のマージンを削除 */
+    font-size: 2.2em; /* タイトルを少し大きく */
+}
+
+nav {
+    padding-bottom: 15px; /* ナビゲーションの下に余白を追加 */
 }
 
 nav a {
@@ -212,4 +225,5 @@ section.visible {
 
 .submit-button:hover {
     background-color: #E66743; 
+
 }
