@@ -35,9 +35,6 @@ header {
     z-index: 1000;   /* 他の要素より手前に表示 */
 }
 
-.main-title {
-   background-color: 00000;
-}
 /* サイトタイトルエリアのスタイルを追加 */
 .site-title-area {
     padding-top: 20px;
