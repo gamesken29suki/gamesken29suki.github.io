@@ -335,3 +335,46 @@ blockquote {
 }
 
 
+/* ダークモード切り替えボタンのスタイル */
+#dark-mode-toggle {
+    background-color: var(--color-light); /* 白い背景 */
+    color: var(--color-text); /* 文字はチャコール */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    position: absolute; /* ヘッダー内で自由に配置するために固定を解除 */
+    right: 20px;       /* 右端から20px */
+    top: 50%;          /* ヘッダーの中央に */
+    transform: translateY(-50%); /* 垂直方向の調整 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* =========================================================
+   ダークモード用の配色テーマ
+   ========================================================= */
+body.dark-mode {
+    /* 通常モードの色をダークモードの色で上書き */
+    --color-primary: #8A2BE2;      /* ブルーバイオレット (情緒的な紫) */
+    --color-secondary: #B0C4DE;     /* ライトスチールブルー */
+    --color-background: #1C1C1C;   /* 非常に濃い灰色 */
+    --color-text: #F5F5DC;         /* オフホワイト */
+    --color-light: #2C2C2C;        /* 暗い背景に使う濃い灰色 */
+}
+/* ダークモード時のヘッダーの色の微調整 */
+body.dark-mode header {
+    background-color: var(--color-primary);
+}
+
+/* ダークモード時のセクション・カードの調整 */
+body.dark-mode section,
+body.dark-mode .article-container {
+    background-color: var(--color-light); /* 暗い背景色 */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05); /* シャドウを明るく */
+}
+
+body.dark-mode .hobby-card {
+    background-color: #404040; /* 趣味カードの背景を暗い灰色に */
+}
