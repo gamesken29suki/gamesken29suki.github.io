@@ -165,7 +165,45 @@ section.visible {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* -------------------- ギャラリー / 作品集セクション -------------------- */
 
+.gallery-grid {
+    /* 趣味セクションと同様にグリッドレイアウトを使用 */
+    display: grid;
+    /* 3列表示（画面サイズに応じて調整される） */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    background-color: var(--color-background); /* ベージュの背景 */
+    border-radius: 10px;
+    overflow: hidden; /* 画像が角からはみ出さないようにする */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* ホバーで少し浮き上がるアニメーション */
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-image {
+    width: 100%;
+    /* 画像の高さを固定して統一感を出す */
+    height: 200px; 
+    /* 画像を切り抜いてフィットさせる */
+    object-fit: cover; 
+    display: block;
+}
+
+.caption {
+    padding: 15px;
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--color-text);
+    text-align: center;
+}
 /* -------------------- ブログ記事一覧 (ステップE) -------------------- */
 
 .blog-list {
@@ -403,6 +441,7 @@ body.dark-mode .article-container {
 body.dark-mode .hobby-card {
     background-color: #404040; /* 趣味カードの背景を暗い灰色に */
 }
+
 
 
 
