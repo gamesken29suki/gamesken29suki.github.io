@@ -28,6 +28,11 @@ header {
     color: var(--color-light);
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   /* 🌟 ヘッダーの固定のための追加 🌟 */
+    position: fixed; /* 画面に対して固定 */
+    top: 0;          /* 画面の上端に配置 */
+    width: 100%;     /* 幅を画面いっぱいに */
+    z-index: 1000;   /* 他の要素より手前に表示 */
 }
 /* サイトタイトルエリアのスタイルを追加 */
 .site-title-area {
@@ -63,6 +68,9 @@ nav a:hover {
     max-width: 1000px; 
     margin: 40px auto;
     padding: 0 20px;
+
+   /* 🌟 ヘッダーの高さ分だけ下にずらすための追加 🌟 */
+    padding-top: 130px; /* 固定ヘッダーの高さ（約100px）+ 上部の余白 */
 }
 
 /* 記事ページ(article*.html)のコンテナ (狭い幅 800px) */
@@ -226,4 +234,24 @@ section.visible {
 .submit-button:hover {
     background-color: #E66743; 
 
+}
+
+/* -------------------- フッター -------------------- */
+footer {
+    background-color: var(--color-text); /* 落ち着いたチャコール色を背景に */
+    color: var(--color-background); /* ベージュを文字色に */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    margin-top: 50px; /* メインコンテンツとの間にスペースを設ける */
+}
+
+footer a {
+    color: var(--color-primary); /* リンクはメインのコーラルオレンジ */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--color-secondary);
 }
