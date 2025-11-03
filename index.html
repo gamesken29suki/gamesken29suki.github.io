@@ -104,8 +104,10 @@
         <p>Created with <a href="#about">INFP-T Spirit</a></p>
     </footer>
     <script>
+        // DOMが完全に読み込まれた後に実行
         document.addEventListener('DOMContentLoaded', (event) => {
-            // 🌟🌟🌟 ダークモード切り替えロジック 🌟🌟🌟
+            
+            // 🌟🌟🌟 1. ダークモード切り替えロジック 🌟🌟🌟
             const toggle = document.getElementById('dark-mode-toggle');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -114,23 +116,25 @@
             
             if (savedMode === 'dark' || (savedMode === null && prefersDark.matches)) {
                 document.body.classList.add('dark-mode');
-                toggle.textContent = '☀️'; // ボタンアイコンを太陽に
+                if (toggle) toggle.textContent = '☀️'; // ボタンアイコンを太陽に
             }
 
             // クリック時の処理
-            toggle.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-                
-                // モードに合わせてアイコンを切り替える
-                if (document.body.classList.contains('dark-mode')) {
-                    localStorage.setItem('theme', 'dark');
-                    toggle.textContent = '☀️';
-                } else {
-                    localStorage.setItem('theme', 'light');
-                    toggle.textContent = '🌙';
-                }
-            });
-        document.addEventListener('DOMContentLoaded', (event) => {
+            if (toggle) {
+                toggle.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                    
+                    // モードに合わせてアイコンを切り替える
+                    if (document.body.classList.contains('dark-mode')) {
+                        localStorage.setItem('theme', 'dark');
+                        toggle.textContent = '☀️';
+                    } else {
+                        localStorage.setItem('theme', 'light');
+                        toggle.textContent = '🌙';
+                    }
+                });
+            }
+
             // ページアニメーション (既存のコード)
             const sections = document.querySelectorAll('section');
             const checkVisibility = () => {
@@ -144,7 +148,7 @@
             window.addEventListener('scroll', checkVisibility);
             checkVisibility();
 
-            // 🌟🌟🌟 ブログ記事のデータ 🌟🌟🌟
+            // 🌟🌟🌟 2. ブログ記事のデータ 🌟🌟🌟
             const blogPosts = [
                 {
                     title: "心の奥底にある感情について",
@@ -164,31 +168,29 @@
                 // 記事を追加するときは、この配列に新しいオブジェクトを上に追加します
             ];
 
-            // 🌟🌟🌟 ブログ一覧の動的生成 🌟🌟🌟
+            // 🌟🌟🌟 3. ブログ一覧の動的生成 🌟🌟🌟
             const blogListElement = document.querySelector('.blog-list');
             
             // 既存のリスト内容をクリア (念のため)
-            blogListElement.innerHTML = ''; 
+            if (blogListElement) {
+                blogListElement.innerHTML = ''; 
 
-            // 最新の記事が上に来るように配列を逆順にする (任意)
-            // blogPosts.reverse();
-
-            blogPosts.forEach(post => {
-                const listItem = document.createElement('li');
-                listItem.classList.add('blog-item');
-                
-                // HTML構造を作成
-                listItem.innerHTML = `
-                    <a href="${post.url}">${post.title}</a>
-                    <span>公開日: ${post.date}</span>
-                `;
-                
-                blogListElement.appendChild(listItem);
-            });
-        });
+                blogPosts.forEach(post => {
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('blog-item');
+                    
+                    // HTML構造を作成
+                    listItem.innerHTML = `
+                        <a href="${post.url}">${post.title}</a>
+                        <span>公開日: ${post.date}</span>
+                    `;
+                    
+                    blogListElement.appendChild(listItem);
+                });
+            }
+        }); // <-- ここで document.addEventListener が正しく閉じている
     </script>
 </body>
-
 </html>
 
 
