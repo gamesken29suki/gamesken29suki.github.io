@@ -105,6 +105,32 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
+            // 🌟🌟🌟 ダークモード切り替えロジック 🌟🌟🌟
+            const toggle = document.getElementById('dark-mode-toggle');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+            // 状態の読み込み: LocalStorageまたはブラウザの設定
+            const savedMode = localStorage.getItem('theme');
+            
+            if (savedMode === 'dark' || (savedMode === null && prefersDark.matches)) {
+                document.body.classList.add('dark-mode');
+                toggle.textContent = '☀️'; // ボタンアイコンを太陽に
+            }
+
+            // クリック時の処理
+            toggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                
+                // モードに合わせてアイコンを切り替える
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                    toggle.textContent = '☀️';
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    toggle.textContent = '🌙';
+                }
+            });
+        document.addEventListener('DOMContentLoaded', (event) => {
             // ページアニメーション (既存のコード)
             const sections = document.querySelectorAll('section');
             const checkVisibility = () => {
@@ -164,6 +190,7 @@
 </body>
 
 </html>
+
 
 
 
