@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFP-Tな私のWebサイト</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>私のINFP-Tな世界 🌸</h1>
+        <nav>
+            <a href="#about">自己紹介</a>
+            <a href="#blog">ブログ</a>
+            <a href="#hobbies">趣味</a>
+            <a href="#community">コミュニティ</a>
+            <a href="#contact">お問い合わせ</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section id="about" class="fade-in">
+            <h2>✨ 自己紹介</h2>
+            <p>
+                はじめまして！INFP-T（仲介者）の[あなたの名前]です。
+                このサイトは、私の内面の世界や、心惹かれるものたちを表現する場所です。
+                優しく温かいもの、独創的なアイデア、そして深い感情を大切にしています。
+            </p>
+            <p>
+                [具体的な自己紹介や、座右の銘、大切にしていることなどを記述]
+            </p>
+        </section>
+
+        <section id="blog" class="fade-in">
+            <h2>📜 ブログ</h2>
+            <ul class="blog-list">
+                <!-- ブログ記事のリストがここに動的に生成されます -->
+                </ul>
+                </section>
+        
+        <section id="hobbies" class="fade-in">
+            <h2>🎨 趣味の紹介</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-card">
+                    <h3>[趣味 1]</h3>
+                    <p>心のままに表現できることが好きです。[具体的な説明]</p>
+                </div>
+                <div class="hobby-card">
+                    <h3>[趣味 2]</h3>
+                    <p>想像力を刺激される瞬間が好きです。[具体的な説明]</p>
+                </div>
+                <div class="hobby-card">
+                    <h3>[趣味 3]</h3>
+                    <p>平和な気持ちになれる活動です。[具体的な説明]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="fade-in">
+            <h2>🤝 コミュニティ</h2>
+            <h3>参加組織</h3>
+            <p>現在、[組織名]という場所で、[具体的な活動内容]に携わっています。価値観を共有できる素晴らしい仲間たちと出会えました。</p>
+            <h3>Discordサーバー</h3>
+            <p>
+                私が管理・参加しているDiscordサーバー「[サーバー名]」を紹介します。ここでは、[サーバーのテーマ]について自由に語り合えます。
+                ぜひ遊びに来てください！
+            </p>
+            <p>
+                <a href="[Discordサーバーの招待リンク]" target="_blank" style="color: var(--color-primary); font-weight: bold;">➡️ Discordサーバーに参加する</a>
+            </p>
+        </section>
+
+        <section id="contact" class="fade-in">
+            <h2>✉️ お問い合わせ</h2>
+            <form action="https://formspree.io/f/movpzqzz" method="POST">
+                <div class="form-group">
+                    <label for="name">お名前（ニックネーム可）</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">メッセージ</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">送信する</button>
+            </form>
+        </section>
+
+    </div> 
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // ページアニメーション (既存のコード)
+            const sections = document.querySelectorAll('section');
+            const checkVisibility = () => {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.8) {
+                        section.classList.add('visible');
+                    }
+                });
+            };
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility();
+
+            // 🌟🌟🌟 ブログ記事のデータ 🌟🌟🌟
+            const blogPosts = [
+                {
+                    title: "心の奥底にある感情について",
+                    date: "2025年11月3日",
+                    url: "blog/article1.html" // 記事ファイルのパス
+                },
+                {
+                    title: "最近見つけた素敵なデザイン",
+                    date: "2025年10月25日",
+                    url: "blog/article2.html"
+                },
+                {
+                    title: "組織での活動レポート（[組織名]）",
+                    date: "2025年10月15日",
+                    url: "blog/article3.html"
+                }
+                // 記事を追加するときは、この配列に新しいオブジェクトを上に追加します
+            ];
+
+            // 🌟🌟🌟 ブログ一覧の動的生成 🌟🌟🌟
+            const blogListElement = document.querySelector('.blog-list');
+            
+            // 既存のリスト内容をクリア (念のため)
+            blogListElement.innerHTML = ''; 
+
+            // 最新の記事が上に来るように配列を逆順にする (任意)
+            // blogPosts.reverse();
+
+            blogPosts.forEach(post => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('blog-item');
+                
+                // HTML構造を作成
+                listItem.innerHTML = `
+                    <a href="${post.url}">${post.title}</a>
+                    <span>公開日: ${post.date}</span>
+                `;
+                
+                blogListElement.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>

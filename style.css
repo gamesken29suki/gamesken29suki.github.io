@@ -1,0 +1,215 @@
+/* =========================================================
+   style.css: INFP-T らしい暖色系デザイン (オレンジとベージュ)
+   ========================================================= */
+
+/* メインカラーパレット (CSSカスタムプロパティ) */
+:root {
+    --color-primary: #FF7F50;      /* コーラルオレンジ (メインの暖色) */
+    --color-secondary: #FFDAB9;     /* ピーチパフ (アクセントの暖色) */
+    --color-background: #FAF0E6;   /* リネン (ベースのベージュ) */
+    --color-text: #36454F;         /* チャコール (落ち着いたテキスト色) */
+    --color-light: #FFFFFF;        /* 白 */
+}
+
+/* 全体設定 */
+body {
+    /* ステップDで変更: Google Fonts (Noto Sans JP) を適用 */
+    font-family: 'Noto Sans JP', sans-serif; 
+    background-color: var(--color-background);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* 汎用的な行間 */
+}
+
+/* ヘッダー/ナビゲーション */
+header {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: var(--color-light);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-secondary);
+}
+
+/* -------------------- 共通コンテナ・見出し -------------------- */
+
+/* index.html のコンテナ (広い幅 1000px) */
+.container {
+    max-width: 1000px; 
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 記事ページ(article*.html)のコンテナ (狭い幅 800px) */
+.article-container {
+    max-width: 800px; 
+    margin: 40px auto;
+    padding: 40px;
+    background-color: var(--color-light);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    line-height: 1.8; /* 記事は行間を広げて読みやすく */
+}
+
+h1 { /* 記事ページ(article*.html)のメインタイトル */
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+h2 { /* index.htmlのセクション見出し */
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+/* 記事ページのメタ情報 */
+.article-meta {
+    color: gray;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    display: block;
+}
+
+
+/* -------------------- index.html セクション・アニメーション -------------------- */
+
+/* セクション共通スタイル */
+section {
+    background-color: var(--color-light);
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 15px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    /* アニメーション設定 */
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* -------------------- 趣味セクション (ステップF) -------------------- */
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.hobby-card {
+    background-color: var(--color-secondary);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hobby-card h3 {
+    color: var(--color-text);
+    margin-top: 0;
+}
+
+/* 趣味セクションの画像スタイル */
+.hobby-image {
+    width: 100%; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* -------------------- ブログ記事一覧 (ステップE) -------------------- */
+
+.blog-list {
+    list-style: none;
+    padding: 0;
+}
+
+.blog-item {
+    border-bottom: 1px dashed var(--color-secondary);
+    padding: 15px 0;
+}
+
+.blog-item a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.blog-item a:hover {
+    color: var(--color-primary);
+}
+
+.blog-item span {
+    display: block;
+    font-size: 0.9em;
+    color: gray;
+}
+
+
+/* -------------------- お問い合わせフォーム -------------------- */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    background-color: #FFF;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #E66743; 
+}
