@@ -34,6 +34,10 @@ header {
     width: 100%;     /* 幅を画面いっぱいに */
     z-index: 1000;   /* 他の要素より手前に表示 */
 }
+
+.main-title {
+   background-color: 00000;
+}
 /* サイトタイトルエリアのスタイルを追加 */
 .site-title-area {
     padding-top: 20px;
@@ -268,3 +272,4 @@ blockquote {
     color: var(--color-text);
     border-radius: 0 10px 10px 0; /* 左側だけ角を角ばらせる */
 }
+
