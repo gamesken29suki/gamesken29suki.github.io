@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイクラ建築のインスピレーション源と制作過程 - 私のINFP-Tな世界</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="site-title-area" style="padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <nav>
+                <a href="../index.html">🏠 ホームに戻る</a>
+            </nav>
+            <button id="dark-mode-toggle" aria-label="ダークモード切り替え">
+                🌙
+            </button>
+        </div>
+    </header>
+
+    <div class="article-container">
+        
+        <h1>マイクラ建築のインスピレーション源と制作過程</h1>
+        
+        <span class="article-meta">公開日: 2025年10月8日 | カテゴリ: ゲーム</span>
+
+        <p>
+            Minecraftの建築は、私にとって理想の景色をデジタルで具現化する最高の手段です。
+            特にINFPの無限の想像力は、時に壮大な建築アイデアへと繋がります。
+            今回は、インスピレーションをどこから得て、どのように形にしているかを紹介します。
+        </p>
+        
+        <blockquote>
+            創造のプロセスそのものが、最高の瞑想であり、自己表現の場です。
+        </blockquote>
+        
+        <h3>🌳 インスピレーション源</h3>
+        <p>
+            私の建築のアイデアは、現実の世界の美しさと、心の中の幻想的なイメージの融合から生まれます。
+        </p>
+        <ul>
+            <li>**自然風景:** 霧のかかった森、古代の遺跡、夕暮れの海など、写真や絵画からインスピレーションを受けます。</li>
+            <li>**アニメ・ファンタジー:** 既存の壮大な世界観を、ブロックでどのように再解釈できるかを考えるのが楽しいです。</li>
+        </ul>
+        
+        <h3>🧱 制作の流れ（理想の追求）</h3>
+        <ol>
+            <li>**概念設計:** 頭の中で大まかな世界観と感情的なテーマ（例: 郷愁、安らぎ）を決めます。</li>
+            <li>**スケッチ:** 実際にブロックを置く前に、簡単な設計図やパレットのテストを行います。</li>
+            <li>**ディテール:** ただ形を作るだけでなく、光の入り方や水の流れなど、**感情に訴えかける細部**に時間をかけます。</li>
+        </ol>
+
+    </div>
+
+    <script>
+        // ダークモード切り替えロジック（各記事ページに必須）
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('dark-mode-toggle');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+            const savedMode = localStorage.getItem('theme');
+            
+            if (savedMode === 'dark' || (savedMode === null && prefersDark.matches)) {
+                document.body.classList.add('dark-mode');
+                if (toggle) toggle.textContent = '☀️';
+            } else {
+                if (toggle) toggle.textContent = '🌙';
+            }
+
+            if (toggle) {
+                toggle.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                    const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+                    localStorage.setItem('theme', mode);
+                    toggle.textContent = mode === 'dark' ? '☀️' : '🌙';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
