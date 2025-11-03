@@ -12,4 +12,4 @@
 * ⚙️ 技術スタック: HTML5, CSS3 (カスタムプロパティ/Flexbox/Grid), Vanilla JavaScript
 ### 🌐 公開中のサイトはこちら
 
-[🚀 サイトをチェックする ](https://gamesken29suki.github.io/gamesken29suki-renewal/)
+[🚀 サイトをチェックする ](https://gamesken29suki.github.io/)
