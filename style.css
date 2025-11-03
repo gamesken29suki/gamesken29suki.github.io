@@ -13,6 +13,8 @@
 
 /* 全体設定 */
 body {
+   /* スムーズスクロールの追加 */
+    scroll-behavior: smooth; /* <--- この1行を追加 */
     /* ステップDで変更: Google Fonts (Noto Sans JP) を適用 */
     font-family: 'Noto Sans JP', sans-serif; 
     background-color: var(--color-background);
@@ -400,6 +402,7 @@ body.dark-mode .article-container {
 body.dark-mode .hobby-card {
     background-color: #404040; /* 趣味カードの背景を暗い灰色に */
 }
+
 
 
 
