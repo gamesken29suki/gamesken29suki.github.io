@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discordコミュニティ運営の楽しさと難しさ - 私のINFP-Tな世界</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="site-title-area" style="padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <nav>
+                <a href="../index.html">🏠 ホームに戻る</a>
+            </nav>
+            <button id="dark-mode-toggle" aria-label="ダークモード切り替え">
+                🌙
+            </button>
+        </div>
+    </header>
+
+    <div class="article-container">
+        
+        <h1>Discordコミュニティ運営の楽しさと難しさ</h1>
+        
+        <span class="article-meta">公開日: 2025年11月10日 | カテゴリ: コミュニティ</span>
+
+        <p>
+            Discordサーバーの運営は、INFPにとって**理想的な世界を小さな空間に作り上げる**作業に似ています。
+            今回は、私がコミュニティを運営する中で感じる、繋がりを作る楽しさと、調和を保つ難しさについて書き留めます。
+        </p>
+        
+        <blockquote>
+            コミュニティは、個々の小さな光が集まり、一つの温かい灯りを生み出す場所です。
+        </blockquote>
+        
+        <h3>💖 運営の楽しさ（理想の具現化）</h3>
+        <p>
+            最も楽しいのは、サーバーのルールや文化に、自分の**「こうあるべき」という理想**を反映させられる点です。例えば、誰もが安心して発言できるような温かい雰囲気をデザインすることなどです。
+        </p>
+        <ul>
+            <li>**共感:** 参加メンバーが心を開き、深い話題で盛り上がっているのを見る時。</li>
+            <li>**創造:** 新しいチャンネルやBot機能を追加し、使いやすさを改善する時。</li>
+        </ul>
+        
+        <h3>⚖️ 運営の難しさ（調和の追求）</h3>
+        <p>
+            T（Turbulent/神経質）の特性を持つ私にとって、サーバー内の小さな衝突やネガティブな雰囲気は大きなストレスになります。**全員が満足する調和**を常に保つことは、時に難しい課題です。
+        </p>
+        
+        <p>
+            それでも、この小さな世界が誰かの居場所になっていると思うと、運営を続けるエネルギーになります。
+            もし、あなたがDiscord運営に興味があれば、ぜひ一度、私のサーバーにも遊びに来てくださいね。
+        </p>
+
+    </div>
+
+    <script>
+        // ダークモード切り替えロジック（各記事ページに必須）
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('dark-mode-toggle');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+            const savedMode = localStorage.getItem('theme');
+            
+            if (savedMode === 'dark' || (savedMode === null && prefersDark.matches)) {
+                document.body.classList.add('dark-mode');
+                if (toggle) toggle.textContent = '☀️';
+            } else {
+                if (toggle) toggle.textContent = '🌙';
+            }
+
+            if (toggle) {
+                toggle.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                    const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+                    localStorage.setItem('theme', mode);
+                    toggle.textContent = mode === 'dark' ? '☀️' : '🌙';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
