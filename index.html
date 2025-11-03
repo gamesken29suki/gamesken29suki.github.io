@@ -42,10 +42,16 @@
 
         <section id="blog" class="fade-in">
             <h2>📜 ブログ</h2>
+            <div id="category-filter" style="margin-bottom: 20px;">
+                <button class="filter-btn active" data-category="all">すべて</button>
+                <button class="filter-btn" data-category="内省">内省</button>
+                <button class="filter-btn" data-category="デザイン">デザイン</button>
+                <button class="filter-btn" data-category="コミュニティ">コミュニティ</button>
+            </div>
+            
             <ul class="blog-list">
-                <!-- ブログ記事のリストがここに動的に生成されます -->
                 </ul>
-                </section>
+        </section>
         
         <section id="hobbies" class="fade-in">
             <h2>🎨 趣味の紹介</h2>
@@ -154,44 +160,72 @@
                     title: "心の奥底にある感情について",
                     date: "2025年11月3日",
                     url: "blog/article1.html" // 記事ファイルのパス
+                    category: "内省" // カテゴリ追加
                 },
                 {
                     title: "最近見つけた素敵なデザイン",
                     date: "2025年10月25日",
                     url: "blog/article2.html"
+                    category: "デザイン"
                 },
                 {
                     title: "組織での活動レポート（[組織名]）",
                     date: "2025年10月15日",
                     url: "blog/article3.html"
+                    category: "コミュニティ"
                 }
                 // 記事を追加するときは、この配列に新しいオブジェクトを上に追加します
             ];
 
-            // 🌟🌟🌟 3. ブログ一覧の動的生成 🌟🌟🌟
-            const blogListElement = document.querySelector('.blog-list');
-            
-            // 既存のリスト内容をクリア (念のため)
-            if (blogListElement) {
-                blogListElement.innerHTML = ''; 
+// 🌟🌟🌟 3. ブログ一覧の動的生成とフィルタリング 🌟🌟🌟
 
-                blogPosts.forEach(post => {
+            const blogListElement = document.querySelector('.blog-list');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            // 記事リストを描画する関数
+            const renderBlogList = (postsToDisplay) => {
+                if (!blogListElement) return;
+
+                blogListElement.innerHTML = ''; // リストをクリア
+                
+                postsToDisplay.forEach(post => {
                     const listItem = document.createElement('li');
                     listItem.classList.add('blog-item');
                     
-                    // HTML構造を作成
+                    // カテゴリをリストアイテムに追加して表示
                     listItem.innerHTML = `
                         <a href="${post.url}">${post.title}</a>
-                        <span>公開日: ${post.date}</span>
+                        <span>公開日: ${post.date} | カテゴリ: ${post.category}</span>
                     `;
                     
                     blogListElement.appendChild(listItem);
                 });
-            }
-        }); // <-- ここで document.addEventListener が正しく閉じている
+            };
+
+            // フィルタリング処理のリスナー
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectedCategory = button.getAttribute('data-category');
+
+                    // ボタンのアクティブ状態を切り替える
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // フィルタリングの実行
+                    const filteredPosts = selectedCategory === 'all'
+                        ? blogPosts
+                        : blogPosts.filter(post => post.category === selectedCategory);
+
+                    renderBlogList(filteredPosts); // フィルタリングされたリストを描画
+                });
+            });
+
+            // 初期表示: すべての記事を表示
+            renderBlogList(blogPosts);
     </script>
 </body>
 </html>
+
 
 
 
