@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osu! Maniaで集中力を高める内省的なアプローチ - 私のINFP-Tな世界</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="site-title-area" style="padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <nav>
+                <a href="../index.html">🏠 ホームに戻る</a>
+            </nav>
+            <button id="dark-mode-toggle" aria-label="ダークモード切り替え">
+                🌙
+            </button>
+        </div>
+    </header>
+
+    <div class="article-container">
+        
+        <h1>Osu! Maniaで集中力を高める内省的なアプローチ</h1>
+        
+        <span class="article-meta">公開日: 2025年10月28日 | カテゴリ: ゲーム</span>
+
+        <p>
+            Osu! Maniaのようなリズムゲームは、一見すると反射神経の勝負に見えますが、私にとっては**フロー状態**に入るための瞑想的な活動です。
+            音楽とビートに完全に意識を集中させるこの時間は、雑念を払い、内的な平和を見つけるための重要な手段となっています。
+        </p>
+        
+        <blockquote>
+            完璧なタイミングでノーツを叩く行為は、自分自身との調和を感じる瞬間です。
+        </blockquote>
+        
+        <h3>🎶 プレイを「内省」に変える方法</h3>
+        <p>
+            単にスコアを追うだけでなく、心の成長に繋げるために、以下のことを意識しています。
+        </p>
+        <ol>
+            <li>**失敗の受け入れ:** ミスをしたときに感情的になるのではなく、「なぜミスしたか」を客観的に分析し、次のプレイで改善することに集中します。</li>
+            <li>**音楽との一体感:** 完璧な精度を追求するより、楽曲が持つ感情やリズムを体全体で感じることを優先します。</li>
+            <li>**自分のペース:** 他のプレイヤーのハイスコアを気にせず、自分のレベルと体調に合った難易度で楽しむことを最優先にしています。</li>
+        </ol>
+
+        <p>
+            これは、INFPが現実の課題に取り組む際の「完璧主義」や「自己批判」を乗り越えるための、一種の訓練かもしれません。
+        </p>
+
+    </div>
+
+    <script>
+        // ダークモード切り替えロジック（各記事ページに必須）
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('dark-mode-toggle');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+            const savedMode = localStorage.getItem('theme');
+            
+            if (savedMode === 'dark' || (savedMode === null && prefersDark.matches)) {
+                document.body.classList.add('dark-mode');
+                if (toggle) toggle.textContent = '☀️';
+            } else {
+                if (toggle) toggle.textContent = '🌙';
+            }
+
+            if (toggle) {
+                toggle.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                    const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+                    localStorage.setItem('theme', mode);
+                    toggle.textContent = mode === 'dark' ? '☀️' : '🌙';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
