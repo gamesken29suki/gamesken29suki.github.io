@@ -4,25 +4,23 @@
 
 /* メインカラーパレット (CSSカスタムプロパティ) */
 :root {
-    --color-primary: #FF7F50;      /* コーラルオレンジ (メインの暖色) */
-    --color-secondary: #FFDAB9;     /* ピーチパフ (アクセントの暖色) */
+    --color-primary: #E6735C;      /* 落ち着いたサーモンピンク (メインの暖色 - 微調整) */
+    --color-secondary: #FFDAB9;   /* ピーチパフ (アクセントの暖色) */
     --color-background: #FAF0E6;   /* リネン (ベースのベージュ) */
     --color-text: #36454F;         /* チャコール (落ち着いたテキスト色) */
     --color-light: #FFFFFF;        /* 白 */
+    --color-dark-hover: #D46955;   /* メインカラーの少し濃い色（ホバー用） */
 }
 
 /* 全体設定 */
 body {
-    /* ステップDで変更: Google Fonts (Noto Sans JP) を適用 */
-    font-family: 'Noto Sans JP', sans-serif; 
+    font-family: 'Noto Sans JP', sans-serif;
     background-color: var(--color-background);
     color: var(--color-text);
     margin: 0;
     padding: 0;
-    line-height: 1.6; /* 汎用的な行間 */
-
-    /* スムーズスクロールの追加 */
-    scroll-behavior: smooth; /* <--- この1行を追加 */
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 /* ヘッダー/ナビゲーション */
@@ -31,26 +29,30 @@ header {
     color: var(--color-light);
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   /* 🌟 ヘッダーの固定のための追加 🌟 */
-    position: fixed; /* 画面に対して固定 */
-    top: 0;          /* 画面の上端に配置 */
-    width: 100%;     /* 幅を画面いっぱいに */
-    z-index: 1000;   /* 他の要素より手前に表示 */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: block;
 }
 
-/* サイトタイトルエリアのスタイルを追加 */
+/* サイトタイトルエリアのスタイル */
 .site-title-area {
     padding-top: 20px;
     padding-bottom: 10px;
+    position: relative; /* ダークモードトグルボタンの位置決めに必要 */
 }
 
 header h1 {
-    margin: 0; /* タイトル上部のマージンを削除 */
-    font-size: 2.2em; /* タイトルを少し大きく */
+    margin: 0;
+    font-size: 2.2em;
+    color: var(--color-light);
+    border-bottom: none;
+    padding-bottom: 0px;
 }
 
 nav {
-    padding-bottom: 15px; /* ナビゲーションの下に余白を追加 */
+    padding-bottom: 15px;
 }
 
 nav a {
@@ -62,46 +64,49 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--color-secondary);
+    color: var(--color-secondary); /* ホバー色を維持、または var(--color-light) も検討 */
 }
 
 /* -------------------- 共通コンテナ・見出し -------------------- */
 
-/* index.html のコンテナ (広い幅 1000px) */
-.container {
-    max-width: 1000px; 
+/* メインコンテンツコンテナ（ヘッダーの高さを考慮したマージン） */
+.main-content {
+    max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
-
-   /* 🌟 ヘッダーの高さ分だけ下にずらすための追加 🌟 */
     padding-top: 130px; /* 固定ヘッダーの高さ（約100px）+ 上部の余白 */
 }
 
-/* 記事ページ(article*.html)のコンテナ (狭い幅 800px) */
+/* 記事ページ(article*.html)のコンテナ */
 .article-container {
-    max-width: 800px; 
+    max-width: 800px;
     margin: 40px auto;
     padding: 40px;
     background-color: var(--color-light);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    line-height: 1.8; /* 記事は行間を広げて読みやすく */
+    line-height: 1.8;
+    padding-top: 130px; /* 記事ページにも固定ヘッダー分のパディングを追加 */
 }
 
-h1 { /* 記事ページ(article*.html)のメインタイトル */
+
+/* h1  */
+h1 { 
+    font-size: 2em; 
     color: var(--color-primary);
     border-bottom: 2px solid var(--color-secondary);
     padding-bottom: 10px;
     margin-bottom: 30px;
     font-size: 2em;
 }
-
-h2 { /* index.htmlのセクション見出し */
+/* h2 */
+h1:not(header h1), h2 { 
+    font-size: 1.8em;
     color: var(--color-primary);
     border-bottom: 2px solid var(--color-secondary);
     padding-bottom: 10px;
     margin-bottom: 30px;
-    font-size: 1.8em;
+    font-size: 2em;
 }
 
 /* 記事ページのメタ情報 */
@@ -120,11 +125,10 @@ section {
     background-color: var(--color-light);
     padding: 40px;
     margin-bottom: 30px;
-    border-radius: 15px; 
+    border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    /* アニメーション設定 */
-    opacity: 0; 
-    transform: translateY(20px); 
+    opacity: 0;
+    transform: translateY(20px);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
@@ -157,10 +161,10 @@ section.visible {
 
 /* 趣味セクションの画像スタイル */
 .hobby-image {
-    width: 100%; 
-    height: 150px; 
-    object-fit: cover; 
-    border-radius: 8px; 
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
     margin-bottom: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -168,21 +172,19 @@ section.visible {
 /* -------------------- ギャラリー / 作品集セクション -------------------- */
 
 .gallery-grid {
-    /* 趣味セクションと同様にグリッドレイアウトを使用 */
     display: grid;
-    /* 3列表示（画面サイズに応じて調整される） */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-   width: 100%;
+    width: 100%;
 }
 
 .gallery-item {
-    background-color: var(--color-background); /* ベージュの背景 */
+    background-color: var(--color-background);
     border-radius: 10px;
-    overflow: hidden; /* 画像が角からはみ出さないようにする */
+    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-   width: 100%;
+    width: 100%;
 }
 
 /* ホバーで少し浮き上がるアニメーション */
@@ -192,10 +194,8 @@ section.visible {
 
 .gallery-image {
     width: 100%;
-    /* 画像の高さを固定して統一感を出す */
-    height: 200px; 
-    /* 画像を切り抜いてフィットさせる */
-    object-fit: cover; 
+    height: 200px;
+    object-fit: cover;
     display: block;
 }
 
@@ -216,6 +216,10 @@ section.visible {
 .blog-item {
     border-bottom: 1px dashed var(--color-secondary);
     padding: 15px 0;
+}
+
+.blog-item:last-child {
+    border-bottom: none; /* 最後の要素には下線なし */
 }
 
 .blog-item a {
@@ -253,7 +257,7 @@ section.visible {
 }
 
 .filter-btn.active {
-    background-color: var(--color-primary); /* アクティブなボタンはメイン色 */
+    background-color: var(--color-primary);
     color: var(--color-light);
     border-color: var(--color-primary);
 }
@@ -277,8 +281,9 @@ section.visible {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     background-color: #FFF;
+    color: var(--color-text); /* 通常モードのテキスト色を設定 */
 }
 
 .form-group textarea {
@@ -298,18 +303,17 @@ section.visible {
 }
 
 .submit-button:hover {
-    background-color: #E66743; 
-
+    background-color: var(--color-dark-hover); /* メインカラーの少し濃い色 */
 }
 
 /* -------------------- フッター -------------------- */
 footer {
-    background-color: var(--color-text); /* 落ち着いたチャコール色を背景に */
-    color: var(--color-background); /* ベージュを文字色に */
-    text-align: center;
-    padding: 30px 0; /* 上下のパディングを少し増やしてゆったりと */
-    font-size: 0.9em;
-    margin-top: 50px; /* メインコンテンツとの間にスペースを設ける */
+    background-color: var(--color-text);
+    color: var(--color-background);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+    margin-top: 50px;
 }
 
 /* フッター内のコンテンツを中央に集める */
@@ -322,7 +326,7 @@ footer {
 /* トップへ戻るリンクのスタイル */
 .to-top-link {
     display: inline-block;
-    background-color: var(--color-secondary); /* アクセントカラーの背景 */
+    background-color: var(--color-secondary);
     color: var(--color-text);
     text-decoration: none;
     padding: 10px 20px;
@@ -333,16 +337,16 @@ footer {
 }
 
 .to-top-link:hover {
-    background-color: var(--color-primary); /* ホバーでメインカラーに */
-    color: var(--color-light); /* 文字色を白に */
-    transform: translateY(-2px); /* わずかに浮かび上がらせる */
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    transform: translateY(-2px);
 }
 
 /* メッセージと著作権のスタイル */
 .footer-message {
-    font-style: italic; /* メッセージを斜体にして情緒的に */
+    font-style: italic;
     margin-bottom: 10px;
-    color: var(--color-secondary); /* アクセントカラーで目立たせる */
+    color: var(--color-secondary);
 }
 
 .copyright {
@@ -351,15 +355,13 @@ footer {
 }
 /* -------------------- ブログ記事内の引用符のスタイル -------------------- */
 blockquote {
-    /* 引用部分の背景に薄いアクセントカラーを適用 */
-    background-color: var(--color-secondary); 
-    /* 左側にメインの暖色でラインを引く (INFPらしい優しさの表現) */
-    border-left: 5px solid var(--color-primary); 
+    background-color: var(--color-secondary);
+    border-left: 5px solid var(--color-primary);
     padding: 20px 25px;
     margin: 30px 0;
-    font-style: italic; /* 斜体で情緒的な印象に */
+    font-style: italic;
     color: var(--color-text);
-    border-radius: 0 10px 10px 0; /* 左側だけ角を角ばらせる */
+    border-radius: 0 10px 10px 0;
 }
 
 /* =========================================================
@@ -374,15 +376,15 @@ blockquote {
     /* ナビゲーションのリンクを縦に積み重ねる */
     header nav {
         display: flex;
-        flex-direction: column; /* リンクを縦並びにする */
-        gap: 8px; /* リンク間の隙間 */
+        flex-direction: column;
+        gap: 8px;
         padding-bottom: 15px;
     }
     
     /* ヘッダーの高さを再調整 */
-    .container {
-        /* ヘッダーの高さが変わり、下にずらすための padding-top の値も変更が必要 */
-        padding-top: 200px; /* 縦長になったヘッダーの高さに合わせて調整 */
+    .main-content,
+    .article-container {
+        padding-top: 170px; /* モバイルヘッダーの高さに合わせて調整 (約140px + 30px余白) */
     }
 
     /* サイトタイトルを少し小さく */
@@ -393,12 +395,13 @@ blockquote {
     /* -------------------- コンテナ/セクション -------------------- */
     
     /* セクションやコンテナの左右の余白を狭くする */
-    .container {
-        padding: 0 10px; /* 左右の余白を少し減らす */
+    .main-content {
+        padding: 0 10px;
+        padding-top: 170px; /* モバイルヘッダーの高さに合わせて調整 */
     }
 
     section {
-        padding: 25px; /* セクションの内側の余白を減らす */
+        padding: 25px;
         margin-bottom: 20px;
     }
     
@@ -406,22 +409,21 @@ blockquote {
     .article-container {
         margin: 20px 10px;
         padding: 25px;
+        padding-top: 170px; /* 記事ページにもモバイルヘッダー分のパディングを追加 */
     }
 
     /* -------------------- 趣味セクション -------------------- */
     
-    /* 趣味カードを狭い画面でも見やすいように調整 */
+    /* 趣味カードを狭い画面では縦に一本で並べる */
     .hobbies-grid {
-        /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-        /* スマートフォンでは縦に一本で並べる */
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
     /* -------------------- 見出し -------------------- */
 
     h2 {
-        font-size: 1.6em; /* セクション見出しを少し小さく */
+        font-size: 1.6em;
         margin-bottom: 20px;
     }
 }
@@ -429,17 +431,17 @@ blockquote {
 
 /* ダークモード切り替えボタンのスタイル */
 #dark-mode-toggle {
-    background-color: var(--color-light); /* 白い背景 */
-    color: var(--color-text); /* 文字はチャコール */
+    background-color: var(--color-light);
+    color: var(--color-text);
     border: none;
     padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.2em;
-    position: absolute; /* ヘッダー内で自由に配置するために固定を解除 */
-    right: 20px;       /* 右端から20px */
-    top: 50%;          /* ヘッダーの中央に */
-    transform: translateY(-50%); /* 垂直方向の調整 */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, color 0.3s;
 }
@@ -448,12 +450,12 @@ blockquote {
    ダークモード用の配色テーマ
    ========================================================= */
 body.dark-mode {
-    /* 通常モードの色をダークモードの色で上書き */
     --color-primary: #8A2BE2;      /* ブルーバイオレット (情緒的な紫) */
-    --color-secondary: #B0C4DE;     /* ライトスチールブルー */
+    --color-secondary: #B0C4DE;    /* ライトスチールブルー */
     --color-background: #1C1C1C;   /* 非常に濃い灰色 */
     --color-text: #F5F5DC;         /* オフホワイト */
     --color-light: #2C2C2C;        /* 暗い背景に使う濃い灰色 */
+    --color-dark-hover: #7B1FA2;   /* ダークモードPrimaryの少し濃い色 */
 }
 /* ダークモード時のヘッダーの色の微調整 */
 body.dark-mode header {
@@ -463,18 +465,19 @@ body.dark-mode header {
 /* ダークモード時のセクション・カードの調整 */
 body.dark-mode section,
 body.dark-mode .article-container {
-    background-color: var(--color-light); /* 暗い背景色 */
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05); /* シャドウを明るく */
+    background-color: var(--color-light);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
 }
 
 body.dark-mode .hobby-card {
-    background-color: #404040; /* 趣味カードの背景を暗い灰色に */
+    background-color: #404040;
 }
 
-
-
-
-
-
-
-
+/* ダークモード時のフォーム部品のスタイルを追加 */
+body.dark-mode .form-group input[type="text"],
+body.dark-mode .form-group input[type="email"],
+body.dark-mode .form-group textarea {
+    background-color: var(--color-light); /* 暗い背景 */
+    border: 1px solid var(--color-secondary); /* ライトスチールブルーの枠線 */
+    color: var(--color-text); /* オフホワイトの文字色 */
+}
