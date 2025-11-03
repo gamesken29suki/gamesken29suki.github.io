@@ -304,24 +304,51 @@ section.visible {
 
 /* -------------------- フッター -------------------- */
 footer {
-    background-color: var(--color-text); /* 落ち着いたチャコール色を背景に */
-    color: var(--color-background); /* ベージュを文字色に */
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
-    margin-top: 50px; /* メインコンテンツとの間にスペースを設ける */
+    background-color: var(--color-text); /* 落ち着いたチャコール色を背景に */
+    color: var(--color-background); /* ベージュを文字色に */
+    text-align: center;
+    padding: 30px 0; /* 上下のパディングを少し増やしてゆったりと */
+    font-size: 0.9em;
+    margin-top: 50px; /* メインコンテンツとの間にスペースを設ける */
 }
 
-footer a {
-    color: var(--color-primary); /* リンクはメインのコーラルオレンジ */
+/* フッター内のコンテンツを中央に集める */
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* トップへ戻るリンクのスタイル */
+.to-top-link {
+    display: inline-block;
+    background-color: var(--color-secondary); /* アクセントカラーの背景 */
+    color: var(--color-text);
     text-decoration: none;
-    transition: color 0.3s;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-footer a:hover {
-    color: var(--color-secondary);
+.to-top-link:hover {
+    background-color: var(--color-primary); /* ホバーでメインカラーに */
+    color: var(--color-light); /* 文字色を白に */
+    transform: translateY(-2px); /* わずかに浮かび上がらせる */
 }
 
+/* メッセージと著作権のスタイル */
+.footer-message {
+    font-style: italic; /* メッセージを斜体にして情緒的に */
+    margin-bottom: 10px;
+    color: var(--color-secondary); /* アクセントカラーで目立たせる */
+}
+
+.copyright {
+    margin-top: 5px;
+    font-size: 0.8em;
+}
 /* -------------------- ブログ記事内の引用符のスタイル -------------------- */
 blockquote {
     /* 引用部分の背景に薄いアクセントカラーを適用 */
@@ -443,6 +470,7 @@ body.dark-mode .article-container {
 body.dark-mode .hobby-card {
     background-color: #404040; /* 趣味カードの背景を暗い灰色に */
 }
+
 
 
 
