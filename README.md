@@ -1,18 +1,37 @@
-# gamesken29suki's Homepage
+# 🌿 gamesken29suki's Homepage
 
-私の個性を詰め込んだ、シンプルで洗練されたポートフォリオサイトです。
+> **INFP-Tの感性と、デジタル世界での活動を詰め込んだポートフォリオサイト。**
 
-## ✨ Features
-- **Profile**: INFP-Tとしての自己紹介
-- **Activities**: Minecraft SkyBlockの進捗状況（手動更新）
-- **Touhou Tracks**: お気に入りの東方Project楽曲リスト
+[View Live Site](https://gamesken29suki.github.io/)
+
+---
+
+## ✨ Overview
+このサイトは、私のパーソナリティ、大好きな東方Projectの楽曲、そしてMinecraftでの冒険の記録を公開するために作成しました。
+シンプルかつ洗練されたデザインを目指し、HTML/CSS/JavaScriptで一から構築しています。
+
+## 🎮 Game Activities
+### Minecraft (Hypixel SkyBlock)
+- **Combat Level**: 97
+- **Mining Level**: 32
+- **Faction**: Mage
+- **Current Goal**: さらなる効率化と冒険の継続
+
+### Touhou Project
+- **Favorite**: 秋姉妹 (特に秋 穣子が好き)
+- **Favorite Tracks**: 
+  - 千花繚乱 (幽閉サテライト)
+  - 砕月 (あきやまうに)
+  - 童祭 ～ Innocent Treasures (ZUN)
 
 ## 🛠 Tech Stack
-- HTML5 / CSS3 (Custom Properties, Flexbox, Grid)
-- JavaScript (Vanilla JS)
-- GitHub Pages
+- **Frontend**: HTML5, CSS3 (Grid/Flexbox), JavaScript (Vanilla JS)
+- **Deployment**: GitHub Pages
+- **Typography**: Noto Sans JP
 
-## 🎮 Minecraft Status
-- Combat Level: 97
-- HOTM: Tier 7
-- Faction: Mage
+## 🎨 My Identity
+- **Personality Type**: INFP-T
+- **Creative Mind**: 探究心と創造性を大切にする
+
+---
+© 2026 gamesken29suki
