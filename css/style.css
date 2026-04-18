@@ -103,7 +103,7 @@ h1 {
 .update-tag {
     display: block;
     font-size: 0.7rem;
-    color: #bbb;
+    color: #757575;
     text-align: right;
     margin-top: 10px;
 }
@@ -159,7 +159,7 @@ h1 {
 }
 
 .milestone-date {
-    color: #437676;
+    color: #767676;
     font-family: monospace; /* 日付は等幅フォントが洗練されて見える */
 }
 
@@ -244,7 +244,7 @@ header nav a:hover::after {
 }
 
 .contact-lead {
-    color: #666;
+    color: #555555;
     margin-bottom: 3rem;
     font-size: 0.95rem;
 }
