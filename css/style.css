@@ -115,7 +115,7 @@ h1 {
 
 .lead-text {
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--accent-color);
     margin-bottom: 1.5rem;
 }
@@ -265,7 +265,7 @@ header nav a:hover::after {
 }
 
 .contact-label {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: #d35400;
