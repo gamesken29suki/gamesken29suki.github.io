@@ -1,6 +1,4 @@
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 :root {
     --accent-color: #e67e22; /* 豊かな実りのオレンジ */
     --sub-color: #c0392b;    /* 紅葉の赤 */
@@ -18,7 +16,7 @@ body {
 }
 
 header {
-    padding: 2rem;
+    padding: 1rem 10%;
     position: sticky;
     top: 0;
     background: rgba(255, 255, 255, 0.8);
@@ -47,7 +45,7 @@ section {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     letter-spacing: 0.1em;
     border-left: 5px solid var(--accent-color);
     padding-left: 1rem;
@@ -63,12 +61,14 @@ h1 {
     background: #ffffff;
     padding: 2rem;
     border-radius: 8px;
+    border: 1px solid #eee;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    border-color: var(--accent-color);
 }
 /* カードにホバーした時のアニメーション */
 .card {
@@ -97,7 +97,7 @@ h1 {
 
 .label {
     color: #707070;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .update-tag {
@@ -188,7 +188,7 @@ h1 {
 
 .artist {
     color: #757575;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
 }
 /* ナビゲーション全体のレイアウト */
 header nav ul {
