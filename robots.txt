@@ -1,0 +1,39 @@
+# 1. AI学習・クローラーへの拒否
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: AnthropicAI
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+# 2. 画像検索エンジン・画像クローラーへの拒否
+User-agent: Googlebot-Image
+Disallow: /
+
+User-agent: MSNBot-Media
+Disallow: /
+
+User-agent: Pinterest
+Disallow: /
+
+# 3. その他のクローラー（一般的な検索エンジンなど）は許可
+User-agent: *
+Allow: /
+Disallow: /assets/images/
+
+# 4. サイトマップの場所
+Sitemap: https://gamesken29suki.github.io/sitemap.xml
