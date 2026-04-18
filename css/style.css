@@ -96,7 +96,7 @@ h1 {
 }
 
 .label {
-    color: #888;
+    color: #707070;
     font-weight: 300;
 }
 
@@ -159,7 +159,7 @@ h1 {
 }
 
 .milestone-date {
-    color: #bbb;
+    color: #437676;
     font-family: monospace; /* 日付は等幅フォントが洗練されて見える */
 }
 
@@ -187,7 +187,7 @@ h1 {
 }
 
 .artist {
-    color: #999;
+    color: #757575;
     font-size: 0.75rem;
 }
 /* ナビゲーション全体のレイアウト */
@@ -268,7 +268,7 @@ header nav a:hover::after {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--accent-color);
+    color: #d35400;
     font-weight: 500;
 }
 
@@ -287,5 +287,5 @@ header nav a:hover::after {
 .contact-footer {
     margin-top: 5rem;
     font-size: 0.8rem;
-    color: #bbb;
+    color: #757575;
 }
