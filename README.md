@@ -12,7 +12,7 @@
 
 ## 🎮 Game Activities
 ### Minecraft (Hypixel SkyBlock)
-- **Combat Level**: 97
+- **Combat Level**: 105
 - **Mining Level**: 32
 - **Faction**: Mage
 - **Current Goal**: さらなる効率化と冒険の継続
