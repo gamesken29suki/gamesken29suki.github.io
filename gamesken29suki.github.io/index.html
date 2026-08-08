@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gamesken29suki's Homepage</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#FF3B30',
+                            orange: '#FF9500',
+                            deepRed: '#CC2B23',
+                            gradientStart: '#FF2A54',
+                            gradientEnd: '#FF7A00'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-brand-orange selection:text-white min-h-screen flex flex-col">
+
+    <!-- Header / Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-card transition-all duration-300 border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-2 group">
+                <div class="w-9 h-9 rounded-xl gradient-bg flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform duration-200">
+                    <img src="assets/img/profile.jpg" alt="Profile Picture" class="w-full h-full object-cover rounded-xl">
+                </div>
+                <span class="font-bold text-lg tracking-tight group-hover:text-brand-orange transition-colors">
+                    gamesken29suki's Homepage
+                </span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-1 font-medium text-sm">
+                <a href="#home" class="px-4 py-2 rounded-lg hover:text-brand-orange hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Home</a>
+                <a href="#about" class="px-4 py-2 rounded-lg hover:text-brand-orange hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">About</a>
+                <a href="#social" class="px-4 py-2 rounded-lg hover:text-brand-orange hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Social</a>
+                <a href="#contacts" class="px-4 py-2 rounded-lg hover:text-brand-orange hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Contacts</a>
+            </nav>
+
+            <!-- Theme Toggle & Mobile Menu Buttons -->
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" type="button" aria-label="テーマ切替"
+                    class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-orange">
+                    <i id="theme-toggle-dark-icon" class="fas fa-moon text-lg hidden"></i>
+                    <i id="theme-toggle-light-icon" class="fas fa-sun text-lg text-amber-400"></i>
+                </button>
+
+                <!-- Mobile Navigation Toggle -->
+                <button id="mobile-menu-button" type="button" aria-label="メニュー開閉"
+                    class="md:hidden p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 pt-2 pb-4 space-y-1">
+            <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-orange-50 dark:hover:bg-slate-800 hover:text-brand-orange transition-colors">Home</a>
+            <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-orange-50 dark:hover:bg-slate-800 hover:text-brand-orange transition-colors">About</a>
+            <a href="#social" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-orange-50 dark:hover:bg-slate-800 hover:text-brand-orange transition-colors">Social</a>
+            <a href="#contacts" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-orange-50 dark:hover:bg-slate-800 hover:text-brand-orange transition-colors">Contacts</a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow pt-16">
+
+        <!-- 1. Hero Section -->
+        <section id="home" class="relative min-h-[90vh] flex items-center justify-center py-20 overflow-hidden px-4 sm:px-6">
+            <!-- Background Radial Glows -->
+            <div class="glow-bg top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:w-[500px] sm:h-[500px]"></div>
+
+            <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+                <!-- Avatar with Gradient Border -->
+                <div class="relative mb-8 animate-float">
+                    <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full gradient-bg p-1.5 shadow-2xl shadow-orange-500/20">
+                        <img src="https://placehold.co/400x400/2a2a2a/ffffff?text=Your+Avatar" 
+                            alt="Profile Image" 
+                            onerror="this.src='assets/img/profile.jpg'"
+                            class="w-full h-full object-cover rounded-full border-4 border-white dark:border-slate-900 bg-slate-200">
+                    </div>
+                    <!-- Status Badge -->
+                    <span class="absolute bottom-2 right-2 bg-emerald-500 text-white p-2 rounded-full border-2 border-white dark:border-slate-900 shadow-md" title="Available for projects">
+                        <span class="block w-2.5 h-2.5 bg-white rounded-full animate-ping"></span>
+                    </span>
+                </div>
+
+                <!-- Name & Title -->
+                <div class="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-950/50 text-brand-orange text-xs sm:text-sm font-semibold mb-4 border border-orange-200 dark:border-orange-800/40">
+                    👋 Welcome to my digital space
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4">
+                    <span class="gradient-text">gamesken29suki</span>
+                </h1>
+
+                <!-- Abstract / Creative Intro Sentence -->
+                <p class="text-lg sm:text-2xl text-slate-600 dark:text-slate-300 font-medium max-w-2xl leading-relaxed mb-8">
+                    Hypixel Skyblock勢<br class="hidden sm:inline">趣味で音ゲーやWeb制作を楽しむクリエイター
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <a href="#about" class="px-7 py-3.5 rounded-xl gradient-bg text-white font-semibold shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-105 active:scale-95 transition-all duration-200 flex items-center gap-2">
+                        <span>私について知る</span>
+                        <i class="fas fa-arrow-down text-sm"></i>
+                    </a>
+                    <a href="#social" class="px-7 py-3.5 rounded-xl bg-slate-200/80 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 font-semibold transition-all duration-200 hover:scale-105 active:scale-95">
+                        SNSでつながる
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Section -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-100/60 dark:bg-slate-800/40 transition-colors">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-3">About Me</h2>
+                    <p class="text-slate-500 dark:text-slate-400">自己紹介と好きなこと・趣味について</p>
+                    <div class="w-16 h-1 gradient-bg mx-auto rounded-full mt-4"></div>
+                </div>
+
+                <!-- Main Grid Layout -->
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <!-- Bio Text Card -->
+                    <div class="md:col-span-7 glass-card p-6 sm:p-8 rounded-2xl shadow-xl">
+                        <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                            <span class="gradient-text">✨</span> はじめまして！
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            Hypixel Skyblock勢<br class="hidden sm:inline">趣味で音ゲーやWeb制作を楽しむクリエイター
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            新しいツールやプログラミング技術に触れることが趣味で、日々さまざまなコンテンツの作成や学習を楽しんでいます。
+                        </p>
+
+                        <!-- Quick Facts List -->
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200 dark:border-slate-700">
+                            <div>
+                                <span class="block text-xs text-slate-400 font-semibold uppercase">拠点</span>
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Japan 🇯🇵</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 font-semibold uppercase">役割</span>
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Developer & Designer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hobbies Grid -->
+                    <div class="md:col-span-5 space-y-4">
+
+                        <!-- Hobby 1 -->
+                        <div class="p-5 rounded-2xl glass-card hover:border-brand-orange/50 transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-white text-xl shadow-md">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">ゲーム</h4>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400">Minecraft(Hypixel Skyblock),Osu!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hobby 2 -->
+                        <div class="p-5 rounded-2xl glass-card hover:border-brand-orange/50 transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-white text-xl shadow-md">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">プログラミング & 開発</h4>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400">Web開発、UIデザイン</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hobby 3 -->
+                        <div class="p-5 rounded-2xl glass-card hover:border-brand-orange/50 transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-white text-xl shadow-md">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">コミュニティ</h4>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400">Discordサーバー運営、イベント開催</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Social Section -->
+        <section id="social" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-3">Social Links</h2>
+                    <p class="text-slate-500 dark:text-slate-400">各種SNSやコミュニティでつながりましょう</p>
+                    <div class="w-16 h-1 gradient-bg mx-auto rounded-full mt-4"></div>
+                </div>
+
+                <!-- Social Cards Grid -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- X (Twitter) Card -->
+                    <a href="https://x.com/gamesken29suki2" target="_blank" rel="noopener noreferrer" 
+                    class="group glass-card p-6 rounded-2xl flex flex-col items-center text-center hover:shadow-2xl hover:border-brand-orange/50 hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-slate-900 dark:bg-slate-800 text-white flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-x"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">X (旧Twitter)</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">日常のつぶやきや進捗発信</p>
+                        <span class="text-sm font-semibold text-brand-orange group-hover:underline inline-flex items-center gap-1">
+                            Follow me <i class="fas fa-external-link-alt text-xs"></i>
+                        </span>
+                    </a>
+
+                    <!-- YouTube Card -->
+                    <a href="https://youtube.com/@gamesken29suki" target="_blank" rel="noopener noreferrer" 
+                    class="group glass-card p-6 rounded-2xl flex flex-col items-center text-center hover:shadow-2xl hover:border-brand-orange/50 hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-red-600 text-white flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">YouTube</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">動画コンテンツ・ライブ配信</p>
+                        <span class="text-sm font-semibold text-brand-orange group-hover:underline inline-flex items-center gap-1">
+                            Subscribe <i class="fas fa-external-link-alt text-xs"></i>
+                        </span>
+                    </a>
+
+                    <!-- Discord Server Card -->
+                    <a href="https://discord.com/invite/Eua94ttkqS" target="_blank" rel="noopener noreferrer" 
+                    class="group glass-card p-6 rounded-2xl flex flex-col items-center text-center hover:shadow-2xl hover:border-brand-orange/50 hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-discord"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">Discord Server</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">公式コミュニティサーバー</p>
+                        <span class="text-sm font-semibold text-brand-orange group-hover:underline inline-flex items-center gap-1">
+                            Join Server <i class="fas fa-external-link-alt text-xs"></i>
+                        </span>
+                    </a>
+
+                    <!-- GitHub Card -->
+                    <a href="https://github.com/gamesken29suki" target="_blank" rel="noopener noreferrer" 
+                    class="group glass-card p-6 rounded-2xl flex flex-col items-center text-center hover:shadow-2xl hover:border-brand-orange/50 hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-slate-800 dark:bg-slate-700 text-white flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">GitHub</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">ソースコードや開発プロジェクト</p>
+                        <span class="text-sm font-semibold text-brand-orange group-hover:underline inline-flex items-center gap-1">
+                            View Repos <i class="fas fa-external-link-alt text-xs"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 4. Footer Section -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-8 px-4 sm:px-6 transition-colors">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <!-- Footer Brand & Copyright -->
+            <div class="flex items-center gap-2">
+                <span class="font-bold gradient-text">gamesken29suki's Homepage</span>
+                <span class="text-xs text-slate-400">© <span id="year"></span> All rights reserved.</span>
+            </div>
+
+            <!-- Mini Social Icons -->
+            <div class="flex space-x-4 text-slate-500 dark:text-slate-400">
+                <a href="https://x.com/gamesken29suki2" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition-colors" aria-label="X"><i class="fa-brands fa-x"></i></a>
+                <a href="https://youtube.com/@gamesken29suki" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://discord.com/invite/Eua94ttkqS" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition-colors" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://github.com/gamesken29suki" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition-colors" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll To Top Button -->
+    <button id="scroll-to-top" type="button" aria-label="ページ先頭に戻る"
+        class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full gradient-bg text-white shadow-xl flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none">
+        <i class="fas fa-chevron-up text-lg"></i>
+    </button>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>
